@@ -4,9 +4,9 @@ Machine learning is already an overloaded term so perhaps a good starting point 
 
 ### Data Science vs Machine Learning vs AI - get the right tools for the job <a href="#_otom16k87ccg" id="_otom16k87ccg"></a>
 
-While machine learning is technically part of the data science discipline, in an enterprise context it’s often treated as its own function. This is probably because of the type of implementation demands that machine learning makes on organizations relative to other forms of data science. These demands reflect the different purposes (and resulting value) of machine learning when compared with other data science sub-disciplines.
+While machine learning is technically part of the data science discipline, in an enterprise context it’s often treated as its own function. This is probably because of the type of implementation demands that machine learning makes on organisations relative to other forms of data science. These demands reflect the different purposes (and resulting value) of machine learning when compared with other data science sub-disciplines.
 
-![](.gitbook/assets/0)
+![](.gitbook/assets/0.png)
 
 A simple way of thinking about the differences between analytics, data science and machine learning is to consider the different types of questions they allow the business to answer. Is the requirement to use existing data to understand what has already happened or to make a prediction about the future? Machine learning enables the latter while analytics supports the former. Predicting what _could_ happen in an area which is of interest to the business, can be a very useful source of competitive advantage. However, realising this competitive advantage depends on organisations being able to incorporate these predictive insights into their business processes. Production machine learning is focused on implementing machine learning in a way that allows businesses to maximize the resulting benefits for as long as possible.
 
