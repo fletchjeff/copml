@@ -1,7 +1,5 @@
 # Chapter 1: Defining Production Machine Learning
 
-### &#x20;<a href="#_lhtexdypus9d" id="_lhtexdypus9d"></a>
-
 Machine learning is already an overloaded term so perhaps a good starting point for this document would be to clarify what we mean by Production Machine Learning. In our view, it is the point at which the output of a machine learning model fits into the broader business environment which is where value is realised. The term comprises the various processes and practices that enable this to happen in a consistent and sustained manner.
 
 ### Data Science vs Machine Learning vs AI - get the right tools for the job <a href="#_otom16k87ccg" id="_otom16k87ccg"></a>
