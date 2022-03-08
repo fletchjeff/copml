@@ -1,7 +1,8 @@
 # Continuous Operations for Production Machine Learning - COPML
-
+|   |   |
+|---|---|
 | ![](<.gitbook/assets/COPML LOGO New.png>) | _**Note:** This book is adapted from a document written by myself and_ [_Ade Adewumni_](https://www.linkedin.com/in/adeadewunmi/) _and was_ [_originally publish_](https://www.cloudera.com/content/dam/www/marketing/resources/ebooks/blueprint-for-continuous-operations-for-production-machine-learning.pdf.landing.html) _on the_ [_Cloudera_](https://cloudera.com) _website._ |
-| ----- | ------- |
+
 
 
 More organisations are adopting machine learning (ML) and the market has matured enough to be able to offer more options and capabilities. However, in many cases the business value derived from their investment in ML has been inconsistent. This isn’t because enterprise customers have been careless in their approach to machine learning. Many were careful to conduct "science experiments" to identify which of their business challenges machine learning could be successfully applied to. The problem is that success in developing these proofs of concept (PoCs) does not necessarily translate into the successful "operationalisation" or deployment of machine learning. Further, this type of experimentation is not cheap. Outside of the so-called Big Tech firms**\[1]** few organisations can sustain extensive experimentation without clear evidence that it will contribute to the bottom line. If none or very few of the successful PoCs make it to deployment, it’s difficult for organisations to justify ongoing investment. This is true even if it’s been demonstrated, through PoCs, that machine learning can be successfully applied to the underlying business challenge.
