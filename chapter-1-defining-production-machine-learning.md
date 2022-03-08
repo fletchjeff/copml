@@ -16,7 +16,7 @@ It’s also important to understand that machine learning is not and should not 
 
 Having said that, there are some additional infrastructure and platform requirements that are specific to machine learning which need to be considered. Training complex neural networks may require GPUs or specific periodic, elastic ML infrastructure that would need the auto-scaling capabilities of public cloud. Ultimately there is a lot of overlap between the data, the various data teams and the infrastructure that they use. When looking at the infrastructure requirements presented later in this document, it's worth first knowing what is available and applicable before considering bringing in something new.
 
-### Machine Learning in Production is Hard <a href="#_95jd6ui70md8" id="_95jd6ui70md8"></a>
+## Machine Learning in Production is Hard <a href="#_95jd6ui70md8" id="_95jd6ui70md8"></a>
 
 There is plenty of [research](https://arxiv.org/abs/2011.09926) focused on the [challenges](https://www.mckinsey.com/\~/media/mckinsey/industries/advanced%20electronics/our%20insights/how%20artificial%20intelligence%20can%20deliver%20real%20value%20to%20companies/mgi-artificial-intelligence-discussion-paper.ashx) of getting machine learning projects into production.
 
