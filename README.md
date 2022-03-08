@@ -1,6 +1,9 @@
 # Continuous Operations for Production Machine Learning - COPML
 
-![](<.gitbook/assets/COPML LOGO.png>)
+| ![](<.gitbook/assets/COPML LOGO New.png>) | _**Note:** This book is adapted from a document written by myself and_ [_Ade Adewumni_](https://www.linkedin.com/in/adeadewunmi/) _and was_ [_originally publish_](https://www.cloudera.com/content/dam/www/marketing/resources/ebooks/blueprint-for-continuous-operations-for-production-machine-learning.pdf.landing.html) _on the_ [_Cloudera_](https://cloudera.com) _website._ |   |
+| ----------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | - |
+
+![](<.gitbook/assets/COPML LOGO New.png>)
 
 > _**Note:** This book is adapted from a document written by myself and_ [_Ade Adewumni_](https://www.linkedin.com/in/adeadewunmi/) _and was_ [_originally publish_](https://www.cloudera.com/content/dam/www/marketing/resources/ebooks/blueprint-for-continuous-operations-for-production-machine-learning.pdf.landing.html) _on the_ [_Cloudera_](https://cloudera.com) _website._
 
