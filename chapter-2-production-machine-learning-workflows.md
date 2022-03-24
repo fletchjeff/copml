@@ -1,8 +1,16 @@
-# Ch 2: Production Machine Learning Workflows
+# Ch 2: Production Machine Learning Workflow
 
-This section takes a look at the workflow that is most often applicable to enterprise machine learning projects. It is not the only implementable workflow, but it is the most common one we, as a customer facing field team, see.
+This section takes a look at the workflow that is most often applicable to enterprise machine learning projects. It is not the only implementable workflow, but it is the most common one we, having been in various customer facing field teams, see.
 
 ![](.gitbook/assets/Workflow.png)
+
+\*\* New stuff below  - Do some restructuring
+
+Implementation Steps&#x20;
+
+Clarify Business Requirements Assess Available Data Develop the Data Science Plan Model Deployment Model Operations
+
+Implementation Requirements Business Requirements Available Effective Automated (with Airflow) Low Risk Regulatory Requirements Auditable Reproducible Explainable
 
 ## Workflow Steps <a href="#_w4hf59qiavlu" id="_w4hf59qiavlu"></a>
 
@@ -18,7 +26,7 @@ Once the data science team has understood and validated the project, they need t
 
 ### **Step 3: Develop the Data Science Plan**
 
-The next step is exploratory data analysis. This is to understand the shape and structure of the data. This is also where the data science team will come up with a plan for developing a model that solves the business requirements. This is also where the initial model building, testing, experimentation and optimization comes in. The end result should be a working prototype of the machine learning model that will be deployed in the next step.
+The next step is exploratory data analysis. This is to understand the shape and structure of the data. This is also where the data science team will come up with a plan for developing a model that solves the business requirements. This is also where the initial model building, testing, experimentation and optimisation comes in. The end result should be a working prototype of the machine learning model that will be deployed in the next step.
 
 ### **Step 4: Model Deployment**
 
@@ -30,7 +38,7 @@ The final step is the automation and continuous monitoring of the model. This wi
 
 ## Example Scenarios <a href="#_4b5848b7tz0o" id="_4b5848b7tz0o"></a>
 
-The following examples showcase complete implementations of production machine learning projects. Both examples have been implemented within the Cloudera Data Platform using the Applied Machine Learning Prototypes (AMPs) feature in CML. They can serve as useful guides for how you might implement similar projects, using your own data.
+The following examples showcase complete implementations of production machine learning projects. Both examples have been implemented using freely available open source tooling that is still in active development at the time of publication. They can serve as useful guides for how you might implement similar projects, using your own data.
 
 ### Scenario 1: Churn Prediction <a href="#_lhua0n4ybr4k" id="_lhua0n4ybr4k"></a>
 
@@ -40,7 +48,7 @@ Let’s apply this workflow to a business challenge – predicting the likelihoo
 
 ![](.gitbook/assets/4)
 
-Applying this workflow to the origin [telco churn prototype](https://github.com/fastforwardlabs/cml\_churn\_demo\_mlops) would yield a number of steps:
+> _**Note:** The data and some of the code for project comes from_ [_Interpretability report_](https://ff06-2020.fastforwardlabs.com) _by the Cloudera fast forward team_
 
 #### **Step 1: Clarify Business Requirements**
 
@@ -48,7 +56,7 @@ A fictitious telco business wants to predict which customers are likely to churn
 
 #### **Step 2: Assess Available Data**
 
-The data science team assesses the customer-related data that’s available in the organization’s data warehouse and any relevant data that’s been made available from other sources and confirms it is accessible to the systems the data science teams will use for EDA and model training. In this particular case, the customer-related data includes demographics information, usage data, product mix, monthly charges, total charges etc. It is important that the available data includes both customers that have left (i.e. those that have churned) as well as existing customers who have not churned.
+The data science team assesses the customer-related data that’s available in the organisation’s data warehouse and any relevant data that’s been made available from other sources and confirms it is accessible to the systems the data science teams will use for EDA and model training. In this particular case, the customer-related data includes demographics information, usage data, product mix, monthly charges, total charges etc. It is important that the available data includes both customers that have left (i.e. those that have churned) as well as existing customers who have not churned.
 
 #### **Step 3: Develop the Data Science Plan**
 
@@ -60,7 +68,7 @@ The model needs to be deployed into the place where its output is available to t
 
 #### **Step 5: Model Operations**
 
-The model’s performance needs to be checked periodically. A good way to do this is to examine a proportion of the customers that the model made predictions for and assess the accuracy of those predictions e.g. how many of those predicted to churn actually did? Alternatively, what are the precision and recall values of the model? If the model performance falls below an acceptable level then it will be necessary to retrain the model. The performance metrics in this scenario are relatively straightforward, but even one this simple can be hard to put into production within an enterprise context. For example, the choice about how often to assess the model’s performance is very dependent on the business circumstances and the consequences of inaccurate predictions or c[oncept ](https://concept-drift.fastforwardlabs.com)drift. In the churn prediction scenario described here, while timing matters it’s not the most important thing. Churn has business implications in the medium- to long-term but its short-term impact is limited. Therefore a delay of a few days for a performance assessment would probably be acceptable.
+The model’s performance needs to be checked periodically. A good way to do this is to examine a proportion of the customers that the model made predictions for and assess the accuracy of those predictions e.g. how many of those that were predicted to churn actually did? Alternatively, what are the precision and recall values of the model? If the model performance falls below an acceptable level then it will be necessary to retrain the model. The performance metrics in this scenario are relatively straightforward, but even one this simple can be hard to put into production within an enterprise context. For example, the choice about how often to assess the model’s performance is very dependent on the business circumstances and the consequences of inaccurate predictions or [concept drift](https://concept-drift.fastforwardlabs.com). In the churn prediction scenario described here, while timing matters, it’s not the most important thing. Churn has business implications in the medium- to long-term but its short-term impact is limited. Therefore a delay of a few days for a performance assessment would probably be acceptable.
 
 ### Scenario 2: Detecting Pneumonia in Chest X-Rays <a href="#_9q8wbekhtqfu" id="_9q8wbekhtqfu"></a>
 
@@ -78,15 +86,15 @@ Pneumonia is a serious life-threatening condition. Its potentially devastating e
 
 #### **Step 2: Assess Available Data**
 
-The dataset for the model training comprises digitized x-ray images from a range of patients – some with various types of pneumonia and others with uninfected lungs\[2]. Digitized x-ray images are fairly widely used and the data format is well understood. This dataset needs to be made accessible to the data science team for model training. The sample project uploads the training image dataset to the connected data store (for CML this could be an S3 bucket). This could also be implemented using the Cloudera Operational Database (COD), as its Apache HBase Medium Object Storage (MOB) feature means it is [well-suited to serving images](https://blog.cloudera.com/introducing-apache-hbase-medium-object-storage-mob-compaction-partition-policies/).
+The dataset for the model training comprises digitised x-ray images from a range of patients – some with various types of pneumonia and others with uninfected lungs**\[2]**. Digitised x-ray images are fairly widely used and the data format is well understood. This dataset needs to be made accessible to the data science team for model training. The sample project uploads the training image dataset to the connected data store (which in this example is an S3 bucket). This could also be implemented using the Object storage capabilities of the large distributed operational database like HBase or Cassandra.&#x20;
 
 #### **Step 3: Develop a Data Science Plan**
 
-The next step is for the data science team to explore the dataset and come up with the plan for model development and mode of deployment. The business requirement is to reduce the time to get a diagnosis, and minimise the use of specialists and/or additional blood tests. This needs to be done with the view that the model should also make the fewest possible number of false predictions that a patient does not have pneumonia when they actually do. The model supports this requirement by minimizing false negatives as much as possible and optimizing the accuracy of the classification. A reasonable plan for achieving this would be to create an image classifier using [transfer learning](https://blog.fastforwardlabs.com/2019/09/05/transfer-learning-from-the-ground-up.html) on one of the new generation, pretrained image classifier models. So our machine learning solution will comprise two specific models: one model capable of predicting if the patient has pneumonia and a second for predicting the type of pneumonia. The first model needs to be optimized to reduce the number of false negatives (high sensitivity / recall). Adjusting the threshold for classification into either group should minimise false negatives. The second model needs to be optimized for accuracy as the requirement is for more certainty as to the type of pneumonia. This is likely a complex computation task that will require many nodes of GPU during the initial model training process and would be best implemented using a public cloud-based CML with GPU nodes for the duration of the training and optimization processes.
+The next step is for the data science team to explore the dataset and come up with the plan for model development and mode of deployment. The business requirement is to reduce the time to get a diagnosis, and minimise the use of specialists and/or additional blood tests. This needs to be done with the view that the model should also make the fewest possible number of false predictions that a patient does not have pneumonia when they actually do. The model supports this requirement by minimising false negatives as much as possible and optimising the accuracy of the classification. A reasonable plan for achieving this would be to create an image classifier using [transfer learning](https://blog.fastforwardlabs.com/2019/09/05/transfer-learning-from-the-ground-up.html) on one of the new generation, pre-trained image classifier models. So our machine learning solution will comprise two specific models: one model capable of predicting if the patient has pneumonia and a second for predicting the type of pneumonia. The first model needs to be optimised to reduce the number of false negatives (high sensitivity / recall). Adjusting the threshold for classification into either group should minimise false negatives. The second model needs to be optimised for accuracy as the requirement is for more certainty as to the type of pneumonia. This is likely a complex computation task that will require many nodes of GPU during the initial model training process and would be best implemented using a public cloud-based kubernetes platform with GPU nodes for the duration of the training and optimisation processes.
 
 #### **Step 4: Model Deployment**
 
-A production version of this model would involve a pipeline that captures new images from an x-ray that is flagged by the radiologist as requiring pneumonia identification. This image (or in some cases multiple) of the patient’s lungs would be sent to an API endpoint in CML to provide a prediction from the classifier. The data from each call to the API needs to be stored to calculate overall model performance and any result that is below an acceptable confidence threshold needs to trigger an alert to the attending medical practitioner to then either request blood test or request human assistance from someone with expertise in this field. Of critical importance here are availability and history. The model must always be available and the lineage of the data on which it was trained must be tracked in order to support auditability and reproducibility requirements. It is also necessary to store all predictions made by the specific model deployed and the detail for the image used. This allows the ability to confirm that the specific deployment will make the same prediction given the same image and to cover the Auditability requirement listed in section 4. CML provides the ability to track the image details, the prediction and a unique identifier for the model used. CML also keeps copies of previously deployed models so they can be redeployed for testing if required.
+A production version of this model would involve a pipeline that captures new images from an x-ray that is flagged by the radiologist as requiring pneumonia identification. This image (or in some cases multiple) of the patient’s lungs would be sent to an API endpoint to provide a prediction from the classifier. The data from each call to the API needs to be stored to calculate overall model performance and any result that is below an acceptable confidence threshold needs to trigger an alert to the attending medical practitioner to then either request blood test or request human assistance from someone with expertise in this field. Of critical importance here are availability and history. The model must always be available and the lineage of the data on which it was trained must be tracked in order to support auditability and reproducibility requirements. It is also necessary to store all predictions made by the specific model deployed and the detail for the image used. This allows the ability to confirm that the specific deployment will make the same prediction given the same image and to cover the auditability requirement listed in section 4. CML provides the ability to track the image details, the prediction and a unique identifier for the model used. CML also keeps copies of previously deployed models so they can be redeployed for testing if required.
 
 **Step 5: Model Operations**
 
@@ -113,3 +121,5 @@ It is reasonable to expect that different parties within the cross-functional te
 ![](<.gitbook/assets/Great Circle of Blame.png>)
 
 This circle of blame describes a set of behaviours and attitudes that can arise within cross-functional teams wherein blame for things going wrong is attributed to colleagues based in other teams. For example, data scientists might blame their data engineer colleagues for not providing the data in their preferred format or that is not available. Data engineers might blame the data scientists for not adhering to corporate security standards during model development. ML Ops practitioners might express frustration about data scientists not writing tests for their models and data scientists might be exasperated by ML Ops refusal to accept Notebooks as working models. The Great Circle of Blame might look different in different organisations but if left unaddressed it can be a contributory factor for machine learning models failing to make it to production. In addressing this issue, it is important to develop agreed ways of working _and_ to select a platform (and tooling) that is capable of supporting all members of the cross-functional teams to work in the agreed ways.
+
+_**\[2]** - In practice, a model being trained for real world use would probably be trained on a dataset comprising a wider set of x-ray images e.g. x-ray images of lungs infected by diseases other than pneumonia._
