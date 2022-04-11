@@ -1,0 +1,18 @@
+site_name: Continuous Operations for Production Machine Learning
+theme:
+  name: material
+  palette:
+    primary: blue grey
+  icon:
+    logo: fontawesome/solid/arrows-spin #material/vector-circle
+markdown_extensions:
+  - footnotes
+  - attr_list
+  - md_in_html      
+# extra_css:
+#   - stylesheets/extra.css
+# markdown_extensions:
+#   - attr_list
+#   - pymdownx.emoji:
+#       emoji_index: !!python/name:materialx.emoji.twemoji
+#       emoji_generator: !!python/name:materialx.emoji.to_svg

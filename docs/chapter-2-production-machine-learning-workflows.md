@@ -1,8 +1,8 @@
-# Ch 2: Production Machine Learning Workflow
+# 2: Production Machine Learning Workflow
 
 This section takes a look at the workflow that is most often applicable to enterprise machine learning projects. It is not the only implementable workflow, but it is the most common one we, having been in various customer facing field teams, see.
 
-![](.gitbook/assets/Workflow.png)
+![](assets/Workflow.png)
 
 \*\* New stuff below  - Do some restructuring
 
@@ -12,7 +12,7 @@ Clarify Business Requirements Assess Available Data Develop the Data Science Pla
 
 Implementation Requirements Business Requirements Available Effective Automated (with Airflow) Low Risk Regulatory Requirements Auditable Reproducible Explainable
 
-## Workflow Steps <a href="#_w4hf59qiavlu" id="_w4hf59qiavlu"></a>
+## Workflow Steps
 
 The steps below follow the typical workflow for taking a machine learning project to production.
 
@@ -36,17 +36,17 @@ The model developed in the previous step needs to be deployed into production. T
 
 The final step is the automation and continuous monitoring of the model. This will include monitoring metrics and availability of models and other parts of the end to end implementation. This is also where tasks are triggered and run to update, train and redeploy models to make sure it continues working effectively over time. This step should also include assessing when a model is no longer needed by the business. A model could still be operating effectively but there is no longer need to use it within the business and it should be shut down to get back the resources.
 
-## Example Scenarios <a href="#_4b5848b7tz0o" id="_4b5848b7tz0o"></a>
+## Example Scenarios
 
 The following examples showcase complete implementations of production machine learning projects. Both examples have been implemented using freely available open source tooling that is still in active development at the time of publication. They can serve as useful guides for how you might implement similar projects, using your own data.
 
-### Scenario 1: Churn Prediction <a href="#_lhua0n4ybr4k" id="_lhua0n4ybr4k"></a>
+### Scenario 1: Churn Prediction
 
 Github link: [https://github.com/fletchjeff/COPML-1\_telco\_churn](https://github.com/fletchjeff/COPML-1\_telco\_churn)
 
 Let’s apply this workflow to a business challenge – predicting the likelihood that a customer will churn.
 
-![](.gitbook/assets/4)
+![](assets/4)
 
 > _**Note:** The data and some of the code for project comes from_ [_Interpretability report_](https://ff06-2020.fastforwardlabs.com) _by the Cloudera fast forward team_
 
@@ -70,13 +70,13 @@ The model needs to be deployed into the place where its output is available to t
 
 The model’s performance needs to be checked periodically. A good way to do this is to examine a proportion of the customers that the model made predictions for and assess the accuracy of those predictions e.g. how many of those that were predicted to churn actually did? Alternatively, what are the precision and recall values of the model? If the model performance falls below an acceptable level then it will be necessary to retrain the model. The performance metrics in this scenario are relatively straightforward, but even one this simple can be hard to put into production within an enterprise context. For example, the choice about how often to assess the model’s performance is very dependent on the business circumstances and the consequences of inaccurate predictions or [concept drift](https://concept-drift.fastforwardlabs.com). In the churn prediction scenario described here, while timing matters, it’s not the most important thing. Churn has business implications in the medium- to long-term but its short-term impact is limited. Therefore a delay of a few days for a performance assessment would probably be acceptable.
 
-### Scenario 2: Detecting Pneumonia in Chest X-Rays <a href="#_9q8wbekhtqfu" id="_9q8wbekhtqfu"></a>
+### Scenario 2: Detecting Pneumonia in Chest X-Rays
 
 **Github Repo:** [https://github.com/fletchjeff/COPML-2\_xray\_classifier/](https://github.com/fletchjeff/COPML-2\_xray\_classifier/)
 
 This computer vision challenge calls for a different approach to implementing a machine learning model. The requirements are very different from the Customer Churn scenario above. For one thing, given the health context, the risks associated with a poor or inappropriate implementation is far greater.
 
-![](.gitbook/assets/5)
+![](assets/5)
 
 #### **Step 1: Clarify Business Requirements**
 
@@ -86,7 +86,7 @@ Pneumonia is a serious life-threatening condition. Its potentially devastating e
 
 #### **Step 2: Assess Available Data**
 
-The dataset for the model training comprises digitised x-ray images from a range of patients – some with various types of pneumonia and others with uninfected lungs**\[2]**. Digitised x-ray images are fairly widely used and the data format is well understood. This dataset needs to be made accessible to the data science team for model training. The sample project uploads the training image dataset to the connected data store (which in this example is an S3 bucket). This could also be implemented using the Object storage capabilities of the large distributed operational database like HBase or Cassandra.&#x20;
+The dataset for the model training comprises digitised x-ray images from a range of patients – some with various types of pneumonia and others with uninfected lungs[^1]. Digitised x-ray images are fairly widely used and the data format is well understood. This dataset needs to be made accessible to the data science team for model training. The sample project uploads the training image dataset to the connected data store (which in this example is an S3 bucket). This could also be implemented using the Object storage capabilities of the large distributed operational database like HBase or Cassandra.&#x20;
 
 #### **Step 3: Develop a Data Science Plan**
 
@@ -106,9 +106,9 @@ In order to better understand this point, let’s assume 1 in every 100 patients
 
 The scenario described above shows why it’s so important for the design and maintenance of machine learning systems in production, to go beyond simple and efficient automation. It highlights the requirement for both statistical or mathematical capabilities and deep domain understanding and experience to deliver the benefit that a well implemented production machine learning process can bring.
 
-## Cross Functional Teams <a href="#_jt2mzwnebuce" id="_jt2mzwnebuce"></a>
+## Cross Functional Teams
 
-![](<.gitbook/assets/Cross Function Teams.png>)
+![](<assets/Cross Function Teams.png>)
 
 The reality is that this kind of workflow requires input from different teams within the business. In other words, it introduces a cross-functional team requirement:
 
@@ -118,8 +118,8 @@ The reality is that this kind of workflow requires input from different teams wi
 
 It is reasonable to expect that different parties within the cross-functional teams might have differing and strongly held opinions about how things should be done. Unless there is careful coordination, it is possible to inadvertently create the conditions for ‘The Great Circle of Blame’.
 
-![](<.gitbook/assets/Great Circle of Blame.png>)
+![](<assets/Great Circle of Blame.png>)
 
 This circle of blame describes a set of behaviours and attitudes that can arise within cross-functional teams wherein blame for things going wrong is attributed to colleagues based in other teams. For example, data scientists might blame their data engineer colleagues for not providing the data in their preferred format or that is not available. Data engineers might blame the data scientists for not adhering to corporate security standards during model development. ML Ops practitioners might express frustration about data scientists not writing tests for their models and data scientists might be exasperated by ML Ops refusal to accept Notebooks as working models. The Great Circle of Blame might look different in different organisations but if left unaddressed it can be a contributory factor for machine learning models failing to make it to production. In addressing this issue, it is important to develop agreed ways of working _and_ to select a platform (and tooling) that is capable of supporting all members of the cross-functional teams to work in the agreed ways.
 
-_**\[2]** - In practice, a model being trained for real world use would probably be trained on a dataset comprising a wider set of x-ray images e.g. x-ray images of lungs infected by diseases other than pneumonia._
+[^1]: In practice, a model being trained for real world use would probably be trained on a dataset comprising a wider set of x-ray images e.g. x-ray images of lungs infected by diseases other than pneumonia.

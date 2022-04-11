@@ -1,8 +1,8 @@
-# Ch 4: COPML in Practice
+# 4: COPML in Practice
 
 xIn this section we will outline some specific implementation methods and actions to take when architecting and implementing production machine learning systems. We call this methodology Continuous Operations for Production Machine Learning (COPML). This is not just about automation of model tracking, it also includes the various factors that need to be considered so that machine learning projects continually deliver successful business outcomes. This is a methodology by which enterprise users can maintain production machine learning systems in place with the minimum amount of input human input and while also adhering to the specifics and the more intangible requirements for this production machine learning project.
 
-## Why not just use Continuous Delivery? <a href="#_8nl7mi70fug3" id="_8nl7mi70fug3"></a>
+## Why not just use Continuous Delivery?
 
 _"Continuous Delivery is the ability to get changes of all types — including new features, configuration changes, bug fixes, and experiments — into production, or into the hands of users, safely and quickly in a sustainable way"._
 
@@ -14,17 +14,17 @@ However, there are some fundamental requirements that can’t be addressed throu
 
 Another issue that makes CD a less than ideal approach for managing and sustaining machine learning projects in production is that the CD methodology has been optimized for software systems. However, data science teams are not primarily software developers –their interests and concerns are broader than the proper working of the code. They, necessarily, have to take a whole system view. Consequently, they need a methodology that allows for continuous operations and continuous optimization by people who are as skilled at understanding the output of the system as well as the statistical metrics underlying them.
 
-## COPML Overview <a href="#_93x8eo3fefgb" id="_93x8eo3fefgb"></a>
+## COPML Overview
 
 This methodology has two main success criteria, the fulfillment of business requirements and regulatory requirements. It costs money to get the infrastructure, software and people needed to implement effective machine learning applications and systems. Therefore, one important metric for success is a quantifiable return on that investment. Business requirements focus on indicators related to this outcome.
 
 The regulatory requirements relate to implementation considerations which ensure that the machine learning project is compliant with all the relevant legal, industry and ethical standards. In the next section we consider these two requirements in further detail and discuss how the COPML methodology delivers against them .
 
-## Business Requirements <a href="#_n9j80l3yywte" id="_n9j80l3yywte"></a>
+## Business Requirements
 
 As already discussed, a higher level business requirement is always the impetus for a machine learning project. There is usually an explicit metric associated with the business requirement, for example, in the churn reduction scenario described above, this metric was the churn rate and the target was for it to be reduced from 10% to 5%. Consequently, the focus for the machine learning project is the correct identification of customers who are likely to churn **and the application of retention strategies.** If this fall in the churn rate is achieved it is tempting to rule the project a success. However, it's possible for a project to satisfy its primary business metric but do so at too high a cost. If this happens the project will still be deemed a failure. This is why it is important not to over-capitalise these projects. Taking the following steps will help keep running costs down.
 
-### Availability <a href="#_pulmbfi9wkxs" id="_pulmbfi9wkxs"></a>
+### Availability
 
 Availability in IT terms is a reference to infrastructure uptime. If the machine learning model is able to make new inferences, it’s considered available. High availability design for IT systems is a well understood and documented field. The requirement here is to align the availability for the deployed machine learning models with the needs of the relevant business processes. Assuming the business is getting value from this machine learning model it needs to remain accessible, but there is context that needs to be set according to value derived from the machine learning model.
 
@@ -39,7 +39,7 @@ _**Action Items:**_
 * Decide on the required availability for the model based on the business objective
 * Create an architecture to support this availability requirement
 
-### Effectiveness <a href="#_pulmbfi9wkxs" id="_pulmbfi9wkxs"></a>
+### Effectiveness
 
 Once the machine learning model is in place and meets the availability expectations, it’s necessary to create measurable model performance objectives to evaluate the effectiveness of the machine learning model. The reality is that most machine learning projects implemented in an enterprise context are fairly mundane and lack the fanfare of beating a world chess or Go champion. However these projects still need to be performing at a high enough level for the business to derive benefits from the money invested into it.
 
@@ -56,9 +56,9 @@ _**Action Items:**_
 * Set up agreed measurements for the effectiveness of this production machine learning process. These should include both statistical measures for explicit model performance and business metrics for overall performance. This can include costs of infrastructure and people involved as even a well performing machine learning model may simply cost too much to be of long term business benefit.
 * Create trigger points for these effectiveness measurements and actions to be taken when a threshold is reached.
 
-### Automation <a href="#_pulmbfi9wkxs" id="_pulmbfi9wkxs"></a>
+### Automation
 
-![](.gitbook/assets/Automation.png)
+![](assets/Automation.png)
 
 One of the biggest operational costs of any machine learning project will be the teams that support it. There is the direct cost associated with the various data teams working on their respective parts of the project to get things up and running, but there is also the opportunity cost of having these teams do something that could be automated rather than working on other projects. As much of the process as possible needs to be automated. Within the standard workflow described, the following components can be automated with components from CDP.
 
@@ -117,7 +117,7 @@ _**Action Items:**_
 * Create an automated task that will deploy the new model into production and decide on how it will be triggered.
 * Maintain model monitoring for real-time models that have an uptime requirement
 
-### Risk Management <a href="#_jhlz6tposzx5" id="_jhlz6tposzx5"></a>
+### Risk Management
 
 From the perspective of the business, the success or failure of the machine learning project is often viewed in terms of the project's ability to deliver a return on investment. The assessment of risk can be quite narrow and may not be considered in regulatory, security and reputational terms. Issues of security and reputational risk need to be considered and addressed as part of the larger project implementation (regulatory risk is addressed in the next section). As is the case with any applications within a data platform that handle personally identifiable information (PII), machine learning models need to be appropriately secured. This is true even though the model does not directly ingest PII. There are real risks of inadvertently leaking sensitive data if the model is accessed by [malicious actors](https://www.oreilly.com/content/proposals-for-model-vulnerability-and-security/) e.g. using so-called inversion or membership inference attacks facilitated through surrogate models\[4].
 
@@ -129,11 +129,11 @@ _**Action Items:**_
 
 * For projects with any significant business investment is required and where there are large data sets of any personally identifiable information, the data and the security processes should be externally audited to check for bias and security risks.
 
-## Regulatory Requirements <a href="#_codi9bm6paya" id="_codi9bm6paya"></a>
+## Regulatory Requirements
 
 Many countries and regions have regulatory requirements which govern the type of data that can be collected, the conditions under which this can be done and the ways in which such data must be managed. For example, organisations operating within the European Union are subject to the General Data Protection Regulation ([GDPR](https://en.wikipedia.org/wiki/General\_Data\_Protection\_Regulation)), and healthcare providers in the US have to comply with the Health Insurance Portability and Accountability Act ([HIPAA](https://www.hhs.gov/hipaa/index.html)). Many of these regulations are understood with regards to data privacy and security. However there are specific conditions, especially within GDPR, that have implications for the use of automated decision making. For example, Article 22 of GDPR\[5] grants the data subject the [right to an explanation](https://en.wikipedia.org/wiki/Right\_to\_explanation#European\_Union) for decisions that are solely algorithmically-driven. This has implications for the design and implementation of machine learning applications, including whether or not to incorporate (demonstrable) human oversight, and if so, where and how. Satisfying the requirement for an explanation of an algorithmically-driven decision would involve finding the correct version of the data and machine learning model used to make the decision. It would also be necessary to explain which variables within the data informed the model’s decision. Lastly, it is likely that your organization will need to demonstrate the consistency of the decisions made by the ML application by being able to reproduce the decision given the same data and model. Otherwise, a complainant could credibly claim that your ML application or system leads to arbitrary and potentially unfair outcomes. Even if your ML-enabled application or system has sufficient and demonstrable human oversight, it is still a good idea to be able to answer these questions as these are the types of questions a regulator might ask. That’s why the rest of this section is dedicated to exploring how Cloudera’s CDSW/CML experience coupled with the COPML methodology can help you build ML implementations that are auditable, reproducible, and explainable.
 
-### Auditability <a href="#_9qve7obf8hnl" id="_9qve7obf8hnl"></a>
+### Auditability
 
 The regulatory requirement regarding auditability for machine learning is specific to the model and data used to make a prediction. The requirement for GDPR is to know which specific version of the model made the prediction, the data for that prediction and the data used to train the model. The first two requirements are specific to auditability and in CML/CDSW, these requirements can be implemented using the [model governance](https://docs.cloudera.com/machine-learning/cloud/model-governance/topics/ml-enabling-model-governance.html) feature to track model versioning and data lineage (in CML/CDSW this is the equivalent of a model registry) and the [model metrics](https://docs.cloudera.com/machine-learning/cloud/model-metrics/topics/ml-enabling-model-metrics.html) feature to track the input data upon which the model makes prediction. _Note: In this document we use the terms prediction and inference interchangeably, although the latter is the more academic term for the use of a model for making predictions._
 
@@ -145,7 +145,7 @@ _**Action Items:**_
 
 * Ensure any machine learning models that are implemented that have a material effect on a data subject are tracked. This includes identifying the specific model and model artifact used to make the prediction and any data used for the prediction.
 
-### Reproducibility <a href="#_9qve7obf8hnl" id="_9qve7obf8hnl"></a>
+### Reproducibility
 
 There are two requirements that need to be satisfied in order for the output of a machine learning project or application to be considered reproducible. Firstly, any prediction made by the same version of the model, with the same input data, needs to give the same prediction. Secondly, when a new version of the model that has been trained on the same data set as previous versions of the model is given the same input data, the same parameters and the same random seed, it should make the same predictions. There might be some minor variability if a model is trained on a different architecture but this should be insignificant when comparing the statistical metrics and outputs during model testing. If a new model is trained using that same input data, parameters and methodologies as an original model and yields the same prediction results, the model can be said to be reproducible. With regards to the first condition, it’s worth noting that there will be some variability in the response of certain model types but these are rare and usually not found in enterprise implementations. Specifically, if there is a model that is used for decision making that affects a data subject (i.e. the life of an actual human) the same model should always make the same prediction when provided with the same input data.
 
@@ -165,7 +165,7 @@ While the potential impact of the churn model is relatively low, there is still 
 * If necessary, create an automated process that replicates or creates a snapshot of the data used each time the model is trained/retrained.
 * Create a process that will keep the details of the parameters and any other pertinent configuration information each time the model is trained/retrained.
 
-### Explainability <a href="#_9qve7obf8hnl" id="_9qve7obf8hnl"></a>
+### Explainability
 
 The final regulatory requirement has to do with explainability. In the context of GDPR, the data subject has the [right to an explanation](https://en.wikipedia.org/wiki/Right\_to\_explanation#European\_Union) for a decision, if it was solely algorithmically-driven. This is perhaps less well defined and understood than having a system that is auditable and reproducible as the notion of explainability is less concrete and measurable. But the consideration here is for facilitating the understanding of the person impacted by the model-driven decision about the factors that informed that outcome. This particular topic has been covered in the [FastForward Labs report on Interpretability](https://ff06-2020.fastforwardlabs.com). For a simple single variable linear model, there is very little that needs to be explained, but the inner workings of neural networks or complex tree models are more challenging to explain and understand.
 
@@ -173,11 +173,11 @@ Techniques like Local Interpretable Model-agnostic Explanations (LIME) and SHapl
 
 While the churn application does need to be explainable to customers, explainability is very useful to the business users. Specifically, by understanding which variables inform the model predictions they are better able to decide which retention strategies might work best. The application within the churn example project provides a useful visualisation of the customer-related features that the model identifies as highly correlated\[6] with churn.
 
-![](.gitbook/assets/18)
+![](assets/18)
 
 The pneumonia model should be made as explainable as possible as it has real world consequences. The data is not tabular though, the model is just working with the input images. The project implements a version for LIME that highlights which parts of the image were considered important to the model when making the prediction. This should be something that is useful to someone with the required medical training to know if the model is looking at the right part of the image to make the predictions that it is.
 
-![](.gitbook/assets/19)
+![](assets/19)
 
 **Action Items:**
 
