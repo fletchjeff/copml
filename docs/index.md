@@ -2,7 +2,7 @@
 
 ![](<assets/COPML LOGO New.png>){ align=right }
 
-_**Note:** This book is adapted from a document written by myself and_ [_Ade Adewumni_](https://www.linkedin.com/in/adeadewunmi/) _and was_ [_originally publish_](https://www.cloudera.com/content/dam/www/marketing/resources/ebooks/blueprint-for-continuous-operations-for-production-machine-learning.pdf.landing.html) _on the_ [_Cloudera_](https://cloudera.com) _website._ 
+_**Note:** This has been adapted from a document written by myself,_ [Jeff Fletcher](https://www.linkedin.com/in/jefffletcher/) _and_ [_Ade Adewumni_](https://www.linkedin.com/in/adeadewunmi/) _and was_ [_originally publish_](https://www.cloudera.com/content/dam/www/marketing/resources/ebooks/blueprint-for-continuous-operations-for-production-machine-learning.pdf.landing.html) _on the_ [_Cloudera_](https://cloudera.com) _website._
 
 ---
 
