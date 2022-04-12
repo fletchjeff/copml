@@ -246,6 +246,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#workflow-implementation-steps" class="md-nav__link">
+    Workflow Implementation Steps
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#workflow-steps" class="md-nav__link">
     Workflow Steps
   </a>
@@ -440,6 +447,21 @@
   
 
     
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../conclusion/" class="md-nav__link">
+        Conclusion
+      </a>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -465,6 +487,13 @@
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#workflow-implementation-steps" class="md-nav__link">
+    Workflow Implementation Steps
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#workflow-steps" class="md-nav__link">
@@ -638,11 +667,20 @@
 
 
 <h1 id="2-production-machine-learning-workflow">2: Production Machine Learning Workflow</h1>
-<p>This section takes a look at the workflow that is most often applicable to enterprise machine learning projects. It is not the only implementable workflow, but it is the most common one we, having been in various customer facing field teams, see.</p>
-<p><img alt="" src="../assets/Workflow.png" /></p>
-<p>** New stuff below  - Do some restructuring</p>
-<p>Implementation Steps&#x20;</p>
-<p>Clarify Business Requirements Assess Available Data Develop the Data Science Plan Model Deployment Model Operations</p>
+<p>This section takes a look at the workflow that is most often applicable to enterprise machine learning projects. It is not the only implementable workflow, but it is the most common one we, having been in various customer facing field teams, see. </p>
+<p><img alt="" src="../assets/WorkflowFE.png" /></p>
+<p>It also important to understand that a <em>workflow</em> is not the same as an <em>ML pipeline</em>. Pipelines usually refer to a specific technical implementation of a sequence of process or steps that will be executed on an applicable platform, like <a href="https://airflow.apache.org/docs/apache-airflow/stable/">apache airflow</a> or <a href="https://www.kubeflow.org/docs/components/pipelines/">kubeflow</a> pipelines. These specific technical implementation details will be discussed in <a href="../chapter-4-understanding-continuous-operations-for-production-machine-learning/">chapter 4</a>. In the context of COPML, a workflow can be independent steps chained together or single pipeline or mix of both. A <em>workflow</em> encompasses all the pieces necessary to make a machine learning model available for making useful predictions. A workflow is not a technical artifact in the same way that a kubeflow pipeline is. This workflow is a conceptual implementation of a machine learning model implementation that may include actual pipelines stored with their specific artifacts. </p>
+<p>** New stuff below  - Do some restructuring
+**TODO</p>
+<h2 id="workflow-implementation-steps">Workflow Implementation Steps</h2>
+<p>To implement a machine learning workflow, the COPML framework suggests a series of steps to follow </p>
+<ol>
+<li><strong>Clarify Business Requirements</strong></li>
+<li>Assess Available </li>
+<li>Data Develop the Data Science Plan </li>
+<li>Model Deployment </li>
+<li>Model Operations</li>
+</ol>
 <p>Implementation Requirements Business Requirements Available Effective Automated (with Airflow) Low Risk Regulatory Requirements Auditable Reproducible Explainable</p>
 <h2 id="workflow-steps">Workflow Steps</h2>
 <p>The steps below follow the typical workflow for taking a machine learning project to production.</p>
