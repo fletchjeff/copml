@@ -197,7 +197,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter-1-defining-production-machine-learning/" class="md-nav__link">
+      <a href="../chapter-1/" class="md-nav__link">
         1: Defining Production Machine Learning
       </a>
     </li>
@@ -425,7 +425,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter-3-understanding-the-ml-specific-infrastructure/" class="md-nav__link">
+      <a href="../chapter-3/" class="md-nav__link">
         3: Machine Learning Infrastructure
       </a>
     </li>
@@ -440,7 +440,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter-4-understanding-continuous-operations-for-production-machine-learning/" class="md-nav__link">
+      <a href="../chapter-4/" class="md-nav__link">
         4: COPML in Practice
       </a>
     </li>
@@ -669,7 +669,7 @@
 <h1 id="2-production-machine-learning-workflow">2: Production Machine Learning Workflow</h1>
 <p>This section takes a look at the workflow that is most often applicable to enterprise machine learning projects. It is not the only implementable workflow, but it is the most common one we, having been in various customer facing field teams, see. </p>
 <p><img alt="" src="../assets/WorkflowFE.png" /></p>
-<p>It also important to understand that a <em>workflow</em> is not the same as an <em>ML pipeline</em>. Pipelines usually refer to a specific technical implementation of a sequence of process or steps that will be executed on an applicable platform, like <a href="https://airflow.apache.org/docs/apache-airflow/stable/">apache airflow</a> or <a href="https://www.kubeflow.org/docs/components/pipelines/">kubeflow</a> pipelines. These specific technical implementation details will be discussed in <a href="../chapter-4-understanding-continuous-operations-for-production-machine-learning/">chapter 4</a>. In the context of COPML, a workflow can be independent steps chained together or single pipeline or mix of both. A <em>workflow</em> encompasses all the pieces necessary to make a machine learning model available for making useful predictions. A workflow is not a technical artifact in the same way that a kubeflow pipeline is. This workflow is a conceptual implementation of a machine learning model implementation that may include actual pipelines stored with their specific artifacts. </p>
+<p>It also important to understand that a <em>workflow</em> is not the same as an <em>ML pipeline</em>. Pipelines usually refer to a specific technical implementation of a sequence of process or steps that will be executed on an applicable platform, like <a href="https://airflow.apache.org/docs/apache-airflow/stable/">apache airflow</a> or <a href="https://www.kubeflow.org/docs/components/pipelines/">kubeflow</a> pipelines. These specific technical implementation details will be discussed in <a href="chapter-4-understanding-continuous-operations-for-production-machine-learning.md">chapter 4</a>. In the context of COPML, a workflow can be independent steps chained together or single pipeline or mix of both. A <em>workflow</em> encompasses all the pieces necessary to make a machine learning model available for making useful predictions. A workflow is not a technical artifact in the same way that a kubeflow pipeline is. This workflow is a conceptual implementation of a machine learning model implementation that may include actual pipelines stored with their specific artifacts. </p>
 <p>** New stuff below  - Do some restructuring
 **TODO</p>
 <h2 id="workflow-implementation-steps">Workflow Implementation Steps</h2>
@@ -699,7 +699,7 @@
 <h3 id="scenario-1-churn-prediction">Scenario 1: Churn Prediction</h3>
 <p>Github link: <a href="https://github.com/fletchjeff/COPML-1_telco_churn">https://github.com/fletchjeff/COPML-1_telco_churn</a></p>
 <p>Let’s apply this workflow to a business challenge – predicting the likelihood that a customer will churn.</p>
-<p><img alt="" src="assets/4" /></p>
+<p><img alt="" src="../assets/4.png" /></p>
 <blockquote>
 <p><em><strong>Note:</strong> The data and some of the code for project comes from</em> <a href="https://ff06-2020.fastforwardlabs.com"><em>Interpretability report</em></a> <em>by the Cloudera fast forward team</em></p>
 </blockquote>
@@ -716,7 +716,7 @@
 <h3 id="scenario-2-detecting-pneumonia-in-chest-x-rays">Scenario 2: Detecting Pneumonia in Chest X-Rays</h3>
 <p><strong>Github Repo:</strong> <a href="https://github.com/fletchjeff/COPML-2_xray_classifier/">https://github.com/fletchjeff/COPML-2_xray_classifier/</a></p>
 <p>This computer vision challenge calls for a different approach to implementing a machine learning model. The requirements are very different from the Customer Churn scenario above. For one thing, given the health context, the risks associated with a poor or inappropriate implementation is far greater.</p>
-<p><img alt="" src="assets/5" /></p>
+<p><img alt="" src="../assets/5.png" /></p>
 <h4 id="step-1-clarify-business-requirements_2"><strong>Step 1: Clarify Business Requirements</strong></h4>
 <p><em>Note: This example is for the sole purpose of illustrating a technical implementation and should not be considered a source of actual medical advice or opinion.</em></p>
 <p>Pneumonia is a serious life-threatening condition. Its potentially devastating effects have become even clearer over the course of the Covid-19 pandemic. It has a number of causes including bacteria, viruses and fungi. The treatment for pneumonia varies depending on the cause. Consequently, it’s really important to accurately identify if the patient has pneumonia and if so, what type, so that the right course of drugs can be administered. In a busy, pressurised hospital setting, unexpected events can lead to resource constraints which in turn can lead to delays in diagnosing pneumonia. The use of a machine learning model to help with a timely diagnosis could help to save lives and reduce the burden on healthcare practitioners. A machine learning model that is capable of making high confidence predictions (that is embedded in a system with appropriate checks) has the potential to reduce costs and delays associated with blood tests and extensive consultations with specialists. Obviously, lower confidence predictions will still follow the conventional diagnostic workflow. The business requirement in this scenario is the smooth and timely prediction of likely pneumonia cases (with minimal false negatives) while reducing the number of non-pneumonia cases that are directed for blood tests and examination by consultants.</p>
@@ -763,7 +763,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../chapter-1-defining-production-machine-learning/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 1: Defining Production Machine Learning" rel="prev">
+        <a href="../chapter-1/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 1: Defining Production Machine Learning" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -779,7 +779,7 @@
       
       
         
-        <a href="../chapter-3-understanding-the-ml-specific-infrastructure/" class="md-footer__link md-footer__link--next" aria-label="Next: 3: Machine Learning Infrastructure" rel="next">
+        <a href="../chapter-3/" class="md-footer__link md-footer__link--next" aria-label="Next: 3: Machine Learning Infrastructure" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">

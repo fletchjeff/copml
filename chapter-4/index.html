@@ -197,7 +197,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter-1-defining-production-machine-learning/" class="md-nav__link">
+      <a href="../chapter-1/" class="md-nav__link">
         1: Defining Production Machine Learning
       </a>
     </li>
@@ -212,7 +212,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter-2-production-machine-learning-workflows/" class="md-nav__link">
+      <a href="../chapter-2/" class="md-nav__link">
         2: Production Machine Learning Workflow
       </a>
     </li>
@@ -227,7 +227,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter-3-understanding-the-ml-specific-infrastructure/" class="md-nav__link">
+      <a href="../chapter-3/" class="md-nav__link">
         3: Machine Learning Infrastructure
       </a>
     </li>
@@ -368,13 +368,6 @@
           <li class="md-nav__item">
   <a href="#explainability" class="md-nav__link">
     Explainability
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    &#x20;
   </a>
   
 </li>
@@ -530,13 +523,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    &#x20;
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -560,7 +546,7 @@
 <p>In this section we will outline some specific implementation methods and actions to take when architecting and implementing production machine learning systems. We call this methodology Continuous Operations for Production Machine Learning (COPML). This is not just about automation of model tracking, it also includes the various factors that need to be considered so that machine learning projects continually deliver successful business outcomes. This is a methodology by which enterprise users can maintain production machine learning systems in place with the minimum amount of input human input and while also adhering to the specifics and the more intangible requirements for this production machine learning project.</p>
 <h2 id="why-not-just-use-continuous-delivery">Why not just use Continuous Delivery?</h2>
 <p><em>"Continuous Delivery is the ability to get changes of all types — including new features, configuration changes, bug fixes, and experiments — into production, or into the hands of users, safely and quickly in a sustainable way".</em></p>
-<p>-- Jez Humble and Dave Farley</p>
+<p>- Jez Humble and Dave Farley</p>
 <p>It’s worth asking why an existing framework like continuous delivery (CD) can’t simply be adapted to work for production machine learning. Software engineers and teams that use CD effectively, will know that it provides an easy and efficient way to iterate and update software. In fact there are other approaches to conscientious operations for machine learning that take this approach: See <a href="https://martinfowler.com/articles/cd4ml.html">here</a>.</p>
 <p>However, there are some fundamental requirements that can’t be addressed through this process. CD may be able to keep models operating, however, it lacks the flexibility to address the less structured and clear-cut aspects of sustaining a project. The COPML methodology on the other hand is far more accommodating of necessary interventions to the system, whether these are automated or manual. Understanding when and how these interventions need to happen is an iterative process. In other words, there needs to be a period of initial adjustment during which optimizations can be made. CD cannot accommodate this.</p>
 <p>Another issue that makes CD a less than ideal approach for managing and sustaining machine learning projects in production is that the CD methodology has been optimized for software systems. However, data science teams are not primarily software developers –their interests and concerns are broader than the proper working of the code. They, necessarily, have to take a whole system view. Consequently, they need a methodology that allows for continuous operations and continuous optimization by people who are as skilled at understanding the output of the system as well as the statistical metrics underlying them.</p>
@@ -605,7 +591,7 @@
 <p><strong>Model Monitoring (CML Model SDK and Jobs)</strong></p>
 <p>Model monitoring automation will likely follow with the availability requirement. Automated monitoring should cover the availability and effectiveness requirements of the project. These factors should also inform the frequency of monitoring.</p>
 <p>In the churn example, customer churn is measured monthly, therefore an automated process that runs once a month to evaluate the model performance will suffice. Depending on the outcome of the model evaluation process, other tasks can be triggered e.g. model retraining, model redeployment etc.</p>
-<p>For the pneumonia x-ray example, the model uptime needs to be monitored to ensure compliance with the stated availability metric. Whenever the model becomes unavailable, the monitoring process should raise an alert. The performance of the pneumonia x-ray model can be automatically evaluated after a certain number[3] of predictions have been made. This will also inform decisions about thresholds set for retraining etc.</p>
+<p>For the pneumonia x-ray example, the model uptime needs to be monitored to ensure compliance with the stated availability metric. Whenever the model becomes unavailable, the monitoring process should raise an alert. The performance of the pneumonia x-ray model can be automatically evaluated after a certain number<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> of predictions have been made. This will also inform decisions about thresholds set for retraining etc.</p>
 <p>Some threshold values will serve as indications of declining model performance or significant changes in the data landscape which can not be fixed purely through automated remedies. These values need to be identified during the model build and exploratory data science phases and (can be programmatically) set as additional thresholds in model monitoring. When these thresholds are breached, the subsequent automation tasks should include an alert or notification for human evaluation. In the churn example, the model accuracy dropping to 70% (or lower) for three consecutive months with a customer churn rate that remains at 10% (instead of falling), is considered a performance failure scenario. If the automated model retraining and redeployment interventions fail to improve the model performance, then this is a trigger for an evaluation of the entire project.</p>
 <p><em><strong>Action Items:</strong></em></p>
 <ul>
@@ -632,7 +618,7 @@
 <li>Maintain model monitoring for real-time models that have an uptime requirement</li>
 </ul>
 <h3 id="risk-management">Risk Management</h3>
-<p>From the perspective of the business, the success or failure of the machine learning project is often viewed in terms of the project's ability to deliver a return on investment. The assessment of risk can be quite narrow and may not be considered in regulatory, security and reputational terms. Issues of security and reputational risk need to be considered and addressed as part of the larger project implementation (regulatory risk is addressed in the next section). As is the case with any applications within a data platform that handle personally identifiable information (PII), machine learning models need to be appropriately secured. This is true even though the model does not directly ingest PII. There are real risks of inadvertently leaking sensitive data if the model is accessed by <a href="https://www.oreilly.com/content/proposals-for-model-vulnerability-and-security/">malicious actors</a> e.g. using so-called inversion or membership inference attacks facilitated through surrogate models[4].</p>
+<p>From the perspective of the business, the success or failure of the machine learning project is often viewed in terms of the project's ability to deliver a return on investment. The assessment of risk can be quite narrow and may not be considered in regulatory, security and reputational terms. Issues of security and reputational risk need to be considered and addressed as part of the larger project implementation (regulatory risk is addressed in the next section). As is the case with any applications within a data platform that handle personally identifiable information (PII), machine learning models need to be appropriately secured. This is true even though the model does not directly ingest PII. There are real risks of inadvertently leaking sensitive data if the model is accessed by <a href="https://www.oreilly.com/content/proposals-for-model-vulnerability-and-security/">malicious actors</a> e.g. using so-called inversion or membership inference attacks facilitated through surrogate models<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup>.</p>
 <p>Another source of risk for a machine learning project lies in unidentified biases that are inherent in the underlying data used to train the models. This type of risk can be hard to detect and quantify. This is why we recommend that for any significant business investment in machine learning, organizations should consider commissioning an <a href="https://www.ajl.org/connect/request-algorithmic-audit">external auditor</a> with experience with these kinds of projects. There is also newly proposed EU <a href="https://www.politico.eu/article/europe-strict-rules-artificial-intelligence/">legislation</a> (pending review) that will limit the purposes to which machine learning can be applied.</p>
 <p>Note: For both example projects, it is assumed that these implementation risks are managed and implemented outside of the CML/CDSW project. Both projects contain PII which the CDP platform can help to <a href="https://docs.cloudera.com/cdp-private-cloud-base/7.1.6/security-overview/topics/cm-security-overview.html">secure</a> in a number of ways including, for example, <a href="https://docs.cloudera.com/cdp-private-cloud-base/7.1.6/security-how-to-guides/topics/cm-security-redaction.html">redaction</a>. Neither of the example projects referenced in this document has been assessed with regards to inherent bias in the underlying data.</p>
 <p><em><strong>Action Items:</strong></em></p>
@@ -640,7 +626,7 @@
 <li>For projects with any significant business investment is required and where there are large data sets of any personally identifiable information, the data and the security processes should be externally audited to check for bias and security risks.</li>
 </ul>
 <h2 id="regulatory-requirements">Regulatory Requirements</h2>
-<p>Many countries and regions have regulatory requirements which govern the type of data that can be collected, the conditions under which this can be done and the ways in which such data must be managed. For example, organisations operating within the European Union are subject to the General Data Protection Regulation (<a href="https://en.wikipedia.org/wiki/General_Data_Protection_Regulation">GDPR</a>), and healthcare providers in the US have to comply with the Health Insurance Portability and Accountability Act (<a href="https://www.hhs.gov/hipaa/index.html">HIPAA</a>). Many of these regulations are understood with regards to data privacy and security. However there are specific conditions, especially within GDPR, that have implications for the use of automated decision making. For example, Article 22 of GDPR[5] grants the data subject the <a href="https://en.wikipedia.org/wiki/Right_to_explanation#European_Union">right to an explanation</a> for decisions that are solely algorithmically-driven. This has implications for the design and implementation of machine learning applications, including whether or not to incorporate (demonstrable) human oversight, and if so, where and how. Satisfying the requirement for an explanation of an algorithmically-driven decision would involve finding the correct version of the data and machine learning model used to make the decision. It would also be necessary to explain which variables within the data informed the model’s decision. Lastly, it is likely that your organization will need to demonstrate the consistency of the decisions made by the ML application by being able to reproduce the decision given the same data and model. Otherwise, a complainant could credibly claim that your ML application or system leads to arbitrary and potentially unfair outcomes. Even if your ML-enabled application or system has sufficient and demonstrable human oversight, it is still a good idea to be able to answer these questions as these are the types of questions a regulator might ask. That’s why the rest of this section is dedicated to exploring how Cloudera’s CDSW/CML experience coupled with the COPML methodology can help you build ML implementations that are auditable, reproducible, and explainable.</p>
+<p>Many countries and regions have regulatory requirements which govern the type of data that can be collected, the conditions under which this can be done and the ways in which such data must be managed. For example, organisations operating within the European Union are subject to the General Data Protection Regulation (<a href="https://en.wikipedia.org/wiki/General_Data_Protection_Regulation">GDPR</a>), and healthcare providers in the US have to comply with the Health Insurance Portability and Accountability Act (<a href="https://www.hhs.gov/hipaa/index.html">HIPAA</a>). Many of these regulations are understood with regards to data privacy and security. However there are specific conditions, especially within GDPR, that have implications for the use of automated decision making. For example, Article 22 of GDPR<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup> grants the data subject the <a href="https://en.wikipedia.org/wiki/Right_to_explanation#European_Union">right to an explanation</a> for decisions that are solely algorithmically-driven. This has implications for the design and implementation of machine learning applications, including whether or not to incorporate (demonstrable) human oversight, and if so, where and how. Satisfying the requirement for an explanation of an algorithmically-driven decision would involve finding the correct version of the data and machine learning model used to make the decision. It would also be necessary to explain which variables within the data informed the model’s decision. Lastly, it is likely that your organization will need to demonstrate the consistency of the decisions made by the ML application by being able to reproduce the decision given the same data and model. Otherwise, a complainant could credibly claim that your ML application or system leads to arbitrary and potentially unfair outcomes. Even if your ML-enabled application or system has sufficient and demonstrable human oversight, it is still a good idea to be able to answer these questions as these are the types of questions a regulator might ask. That’s why the rest of this section is dedicated to exploring how Cloudera’s CDSW/CML experience coupled with the COPML methodology can help you build ML implementations that are auditable, reproducible, and explainable.</p>
 <h3 id="auditability">Auditability</h3>
 <p>The regulatory requirement regarding auditability for machine learning is specific to the model and data used to make a prediction. The requirement for GDPR is to know which specific version of the model made the prediction, the data for that prediction and the data used to train the model. The first two requirements are specific to auditability and in CML/CDSW, these requirements can be implemented using the <a href="https://docs.cloudera.com/machine-learning/cloud/model-governance/topics/ml-enabling-model-governance.html">model governance</a> feature to track model versioning and data lineage (in CML/CDSW this is the equivalent of a model registry) and the <a href="https://docs.cloudera.com/machine-learning/cloud/model-metrics/topics/ml-enabling-model-metrics.html">model metrics</a> feature to track the input data upon which the model makes prediction. <em>Note: In this document we use the terms prediction and inference interchangeably, although the latter is the more academic term for the use of a model for making predictions.</em></p>
 <p>The final requirement relates to the data used to train the model and is covered in the section on reproducibility.</p>
@@ -665,17 +651,33 @@
 <h3 id="explainability">Explainability</h3>
 <p>The final regulatory requirement has to do with explainability. In the context of GDPR, the data subject has the <a href="https://en.wikipedia.org/wiki/Right_to_explanation#European_Union">right to an explanation</a> for a decision, if it was solely algorithmically-driven. This is perhaps less well defined and understood than having a system that is auditable and reproducible as the notion of explainability is less concrete and measurable. But the consideration here is for facilitating the understanding of the person impacted by the model-driven decision about the factors that informed that outcome. This particular topic has been covered in the <a href="https://ff06-2020.fastforwardlabs.com">FastForward Labs report on Interpretability</a>. For a simple single variable linear model, there is very little that needs to be explained, but the inner workings of neural networks or complex tree models are more challenging to explain and understand.</p>
 <p>Techniques like Local Interpretable Model-agnostic Explanations (LIME) and SHapley Additive exPlanations (SHAP), which are discussed in the FFL report, provide good frameworks for understanding the reason a model made the decision that it did. However, explainability is not as straightforward to implement as auditability and reproducibility. While having explainable models is not always a regulatory requirement, it is often useful as a technique to check your own understanding of how the model works. In fact this was the case for the creators of LIME. Their original implementation of LIME highlighted how the model to which it was applied, while still reasonably accurate, was preferencing data attributes that the data scientists did not expect it to. This understanding helped them (the creators of the LIME) better understand why the model produced inaccurate predictions for a specific subset of the data it encountered.</p>
-<p>While the churn application does need to be explainable to customers, explainability is very useful to the business users. Specifically, by understanding which variables inform the model predictions they are better able to decide which retention strategies might work best. The application within the churn example project provides a useful visualisation of the customer-related features that the model identifies as highly correlated[6] with churn.</p>
-<p><img alt="" src="assets/18" /></p>
+<p>While the churn application does need to be explainable to customers, explainability is very useful to the business users. Specifically, by understanding which variables inform the model predictions they are better able to decide which retention strategies might work best. The application within the churn example project provides a useful visualisation of the customer-related features that the model identifies as highly correlated<sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup> with churn.</p>
+<p><img alt="" src="../assets/18.png" /></p>
 <p>The pneumonia model should be made as explainable as possible as it has real world consequences. The data is not tabular though, the model is just working with the input images. The project implements a version for LIME that highlights which parts of the image were considered important to the model when making the prediction. This should be something that is useful to someone with the required medical training to know if the model is looking at the right part of the image to make the predictions that it is.</p>
-<p><img alt="" src="assets/19" /></p>
+<p><img alt="" src="../assets/19.png" /></p>
 <p><strong>Action Items:</strong></p>
 <ul>
 <li>Decide if the model needs to have an explainability framework attached to it. If it is materially affecting someone’s life, then it does.</li>
 <li>Choose an appropriate explainability framework for the model type and check if it makes the predictions more understandable to someone who is not involved in the project.</li>
 <li>Automate the process updating of this explanation framework with each model training job. If the model changes, it's likely that the explanation framework will become less effective for this new model.</li>
 </ul>
-<h3 id="_1">&#x20;<a href="#_qsgkgmwd6pjp" id="_qsgkgmwd6pjp"></a></h3>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>This threshold will be determined by a number of factors such as the degree of variability in the underlying data, the volume of predictions made by the model relative to the number of examples it was trained on etc.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p>There are other risks as well. For example, the paper, <a href="https://arxiv.org/pdf/1802.08232.pdf"><em>The Secret Sharer: Evaluating and Testing Unintended Memorization in Neural Networks</em></a> explores the risk of inadvertent memorization by neural network models.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:3">
+<p><a href="https://gdpr-text.com/read/article-22/">https://gdpr-text.com/read/article-22/</a>&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:4">
+<p>It is worth highlighting here that correlation isn’t causation, consequently, there are risks to building retention purely on the basis of correlation. Cloudera Fast Forward Lab’s <a href="https://ff13.fastforwardlabs.com">Causality for Machine Learning report </a>explores the application of causality in a machine learning context.&#160;<a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
               
             </article>
@@ -689,7 +691,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../chapter-3-understanding-the-ml-specific-infrastructure/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 3: Machine Learning Infrastructure" rel="prev">
+        <a href="../chapter-3/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 3: Machine Learning Infrastructure" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
