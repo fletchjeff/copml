@@ -1,5 +1,5 @@
 # 2: Production Machine Learning Workflow
-
+ 
 This section takes a look at the workflow that is most often applicable to enterprise machine learning projects. It is not the only implementable workflow, but it is the most common one we, having been in various customer facing field teams, see. 
 
 ![](assets/WorkflowFE.png)
