@@ -2,6 +2,9 @@
 
 This section highlights which aspects of your infrastructure, platform and tooling are required in order to support the cross-functional teams involved in delivering the machine learning workflow described above. The details provided here are specific to the Cloudera stack but the principles are not. These ideas can be applied to other platforms or a bespoke build comprising various components from the Open Source Software (OSS) world. It’s worth noting that this latter case presents its own set of issues.
 
+**TODO
+Pipelines
+
 ## Data Access
 
 ![](<assets/Data Access.png>)

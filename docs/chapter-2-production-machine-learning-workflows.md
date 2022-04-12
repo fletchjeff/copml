@@ -1,14 +1,24 @@
 # 2: Production Machine Learning Workflow
 
-This section takes a look at the workflow that is most often applicable to enterprise machine learning projects. It is not the only implementable workflow, but it is the most common one we, having been in various customer facing field teams, see.
+This section takes a look at the workflow that is most often applicable to enterprise machine learning projects. It is not the only implementable workflow, but it is the most common one we, having been in various customer facing field teams, see. 
 
-![](assets/Workflow.png)
+![](assets/WorkflowFE.png)
+
+It also important to understand that a _workflow_ is not the same as an _ML pipeline_. Pipelines usually refer to a specific technical implementation of a sequence of process or steps that will be executed on an applicable platform, like [apache airflow](https://airflow.apache.org/docs/apache-airflow/stable/) or [kubeflow](https://www.kubeflow.org/docs/components/pipelines/) pipelines. These specific technical implementation details will be discussed in [chapter 4](chapter-4-understanding-continuous-operations-for-production-machine-learning.md). In the context of COPML, a workflow can be independent steps chained together or single pipeline or mix of both. A _workflow_ encompasses all the pieces necessary to make a machine learning model available for making useful predictions. A workflow is not a technical artifact in the same way that a kubeflow pipeline is. This workflow is a conceptual implementation of a machine learning model implementation that may include actual pipelines stored with their specific artifacts. 
 
 \*\* New stuff below  - Do some restructuring
+**TODO
 
-Implementation Steps&#x20;
+## Workflow Implementation Steps
+To implement a machine learning workflow, the COPML framework suggests a series of steps to follow 
 
-Clarify Business Requirements Assess Available Data Develop the Data Science Plan Model Deployment Model Operations
+1. **Clarify Business Requirements**
+2. Assess Available 
+3. Data Develop the Data Science Plan 
+4. Model Deployment 
+5. Model Operations
+
+
 
 Implementation Requirements Business Requirements Available Effective Automated (with Airflow) Low Risk Regulatory Requirements Auditable Reproducible Explainable
 
