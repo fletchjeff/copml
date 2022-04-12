@@ -56,7 +56,7 @@ Github link: [https://github.com/fletchjeff/COPML-1\_telco\_churn](https://githu
 
 Let’s apply this workflow to a business challenge – predicting the likelihood that a customer will churn.
 
-![](assets/4)
+![](assets/4.png)
 
 > _**Note:** The data and some of the code for project comes from_ [_Interpretability report_](https://ff06-2020.fastforwardlabs.com) _by the Cloudera fast forward team_
 
@@ -86,7 +86,7 @@ The model’s performance needs to be checked periodically. A good way to do thi
 
 This computer vision challenge calls for a different approach to implementing a machine learning model. The requirements are very different from the Customer Churn scenario above. For one thing, given the health context, the risks associated with a poor or inappropriate implementation is far greater.
 
-![](assets/5)
+![](assets/5.png)
 
 #### **Step 1: Clarify Business Requirements**
 
