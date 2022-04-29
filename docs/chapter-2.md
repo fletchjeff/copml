@@ -4,23 +4,35 @@ This section takes a look at the workflow that is most often applicable to enter
 
 ![](assets/WorkflowFE.png)
 
-It also important to understand that a _workflow_ is not the same as an _ML pipeline_. Pipelines usually refer to a specific technical implementation of a sequence of process or steps that will be executed on an applicable platform, like [apache airflow](https://airflow.apache.org/docs/apache-airflow/stable/) or [kubeflow](https://www.kubeflow.org/docs/components/pipelines/) pipelines. These specific technical implementation details will be discussed in [chapter 4](chapter-2.md). In the context of COPML, a workflow can be independent steps chained together or single pipeline or mix of both. A _workflow_ encompasses all the pieces necessary to make a machine learning model available for making useful predictions. A workflow is not a technical artifact in the same way that a kubeflow pipeline is. This workflow is a conceptual implementation of a machine learning model implementation that may include actual pipelines stored with their specific artifacts. 
+### Workflow vs Pipeline
 
-\*\* New stuff below  - Do some restructuring
-**TODO
+It also important to understand that a _workflow_ is not the same as an _ML Pipeline_. Pipelines usually refer to a specific technical implementation of a sequence of processes or steps that will be executed on an applicable platform, like [Apache Airflow](https://airflow.apache.org/docs/apache-airflow/stable/) or [Kubeflow](https://www.kubeflow.org/docs/components/pipelines/) pipelines. These specific technical implementation details will be discussed further in [chapter 4](chapter-4.md). In the context of COPML, a workflow can be an independent set of steps chained together or single pipeline or mix of both. A workflow encompasses all the pieces necessary to make a machine learning model available to make useful predictions. It is not a technical artifact in the same way that a Kubeflow pipeline yaml file is. The workflow idea referred to in this document is a conceptual implementation of a machine learning process that may include actual pipelines stored with their specific artifacts. 
 
 ## Workflow Implementation Steps
-To implement a machine learning workflow, the COPML framework suggests a series of steps to follow 
+To implement a machine learning workflow, the COPML framework suggests a series of steps to follow that help better understand the requirements and what is needed to implement the project. 
 
-1. **Clarify Business Requirements**
+The requirements for a machine learning project can be broadly divide into two main categories with specific sub sections within each.
+
+**Business Requirements**
+
+* Availability 
+* Effectiveness 
+* Automation
+* Risk Management
+
+**Regulatory Requirements**
+
+* Auditability 
+* Reproducibility 
+* Explainability
+
+Each of these requirements detailed further in [chapter 4](chapter-4.md). In order to meet these requirements, the steps that should be followed to better understand what is needed are:
+
+1. Clarify Business Requirements
 2. Assess Available 
 3. Data Develop the Data Science Plan 
 4. Model Deployment 
 5. Model Operations
-
-
-
-Implementation Requirements Business Requirements Available Effective Automated (with Airflow) Low Risk Regulatory Requirements Auditable Reproducible Explainable
 
 ## Workflow Steps
 
@@ -116,20 +128,5 @@ In order to better understand this point, let’s assume 1 in every 100 patients
 
 The scenario described above shows why it’s so important for the design and maintenance of machine learning systems in production, to go beyond simple and efficient automation. It highlights the requirement for both statistical or mathematical capabilities and deep domain understanding and experience to deliver the benefit that a well implemented production machine learning process can bring.
 
-## Cross Functional Teams
-
-![](<assets/Cross Function Teams.png>)
-
-The reality is that this kind of workflow requires input from different teams within the business. In other words, it introduces a cross-functional team requirement:
-
-* The **data engineering** team needs to make sure that the data is clean, up to date and available.
-* The **data science** team then needs to perform data exploration and model building
-* The **machine learning operations** team needs to manage the model post-deployment and make sure that it is always available, operating accurately and continually accessible to the relevant business users.
-
-It is reasonable to expect that different parties within the cross-functional teams might have differing and strongly held opinions about how things should be done. Unless there is careful coordination, it is possible to inadvertently create the conditions for ‘The Great Circle of Blame’.
-
-![](<assets/Great Circle of Blame.png>)
-
-This circle of blame describes a set of behaviours and attitudes that can arise within cross-functional teams wherein blame for things going wrong is attributed to colleagues based in other teams. For example, data scientists might blame their data engineer colleagues for not providing the data in their preferred format or that is not available. Data engineers might blame the data scientists for not adhering to corporate security standards during model development. ML Ops practitioners might express frustration about data scientists not writing tests for their models and data scientists might be exasperated by ML Ops refusal to accept Notebooks as working models. The Great Circle of Blame might look different in different organisations but if left unaddressed it can be a contributory factor for machine learning models failing to make it to production. In addressing this issue, it is important to develop agreed ways of working _and_ to select a platform (and tooling) that is capable of supporting all members of the cross-functional teams to work in the agreed ways.
 
 [^1]: In practice, a model being trained for real world use would probably be trained on a dataset comprising a wider set of x-ray images e.g. x-ray images of lungs infected by diseases other than pneumonia.

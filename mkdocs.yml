@@ -2,7 +2,7 @@ site_name: Continuous Operations for Production Machine Learning
 theme:
   name: material
   palette:
-    primary: blue grey
+    primary: teal
   icon:
     logo: fontawesome/solid/arrows-spin #material/vector-circle
 markdown_extensions:
