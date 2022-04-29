@@ -24,7 +24,7 @@
         
           
           
-          <meta name="theme-color" content="#546d78">
+          <meta name="theme-color" content="#009485">
         
       
     
@@ -53,7 +53,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="blue-grey" data-md-color-accent="">
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="teal" data-md-color-accent="">
   
     
     
@@ -183,7 +183,7 @@
   
     <li class="md-nav__item">
       <a href=".." class="md-nav__link">
-        COPML - An Introduction
+        COPML - A Quick Introduction
       </a>
     </li>
   
@@ -246,6 +246,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#workflow-vs-pipeline" class="md-nav__link">
+    Workflow vs Pipeline
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#workflow-implementation-steps" class="md-nav__link">
     Workflow Implementation Steps
   </a>
@@ -402,13 +409,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#cross-functional-teams" class="md-nav__link">
-    Cross Functional Teams
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -426,7 +426,7 @@
   
     <li class="md-nav__item">
       <a href="../chapter-3/" class="md-nav__link">
-        3: Machine Learning Infrastructure
+        3: Cross Functional Teams
       </a>
     </li>
   
@@ -441,7 +441,22 @@
   
     <li class="md-nav__item">
       <a href="../chapter-4/" class="md-nav__link">
-        4: COPML in Practice
+        4: Machine Learning Infrastructure
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter-5/" class="md-nav__link">
+        5: COPML in Practice
       </a>
     </li>
   
@@ -489,6 +504,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#workflow-vs-pipeline" class="md-nav__link">
+    Workflow vs Pipeline
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#workflow-implementation-steps" class="md-nav__link">
     Workflow Implementation Steps
   </a>
@@ -645,13 +667,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#cross-functional-teams" class="md-nav__link">
-    Cross Functional Teams
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -669,19 +684,32 @@
 <h1 id="2-production-machine-learning-workflow">2: Production Machine Learning Workflow</h1>
 <p>This section takes a look at the workflow that is most often applicable to enterprise machine learning projects. It is not the only implementable workflow, but it is the most common one we, having been in various customer facing field teams, see. </p>
 <p><img alt="" src="../assets/WorkflowFE.png" /></p>
-<p>It also important to understand that a <em>workflow</em> is not the same as an <em>ML pipeline</em>. Pipelines usually refer to a specific technical implementation of a sequence of process or steps that will be executed on an applicable platform, like <a href="https://airflow.apache.org/docs/apache-airflow/stable/">apache airflow</a> or <a href="https://www.kubeflow.org/docs/components/pipelines/">kubeflow</a> pipelines. These specific technical implementation details will be discussed in <a href="./">chapter 4</a>. In the context of COPML, a workflow can be independent steps chained together or single pipeline or mix of both. A <em>workflow</em> encompasses all the pieces necessary to make a machine learning model available for making useful predictions. A workflow is not a technical artifact in the same way that a kubeflow pipeline is. This workflow is a conceptual implementation of a machine learning model implementation that may include actual pipelines stored with their specific artifacts. </p>
-<p>** New stuff below  - Do some restructuring
-**TODO</p>
+<h3 id="workflow-vs-pipeline">Workflow vs Pipeline</h3>
+<p>It also important to understand that a <em>workflow</em> is not the same as an <em>ML Pipeline</em>. Pipelines usually refer to a specific technical implementation of a sequence of processes or steps that will be executed on an applicable platform, like <a href="https://airflow.apache.org/docs/apache-airflow/stable/">Apache Airflow</a> or <a href="https://www.kubeflow.org/docs/components/pipelines/">Kubeflow</a> pipelines. These specific technical implementation details will be discussed further in <a href="../chapter-4/">chapter 4</a>. In the context of COPML, a workflow can be an independent set of steps chained together or single pipeline or mix of both. A workflow encompasses all the pieces necessary to make a machine learning model available to make useful predictions. It is not a technical artifact in the same way that a Kubeflow pipeline yaml file is. The workflow idea referred to in this document is a conceptual implementation of a machine learning process that may include actual pipelines stored with their specific artifacts. </p>
 <h2 id="workflow-implementation-steps">Workflow Implementation Steps</h2>
-<p>To implement a machine learning workflow, the COPML framework suggests a series of steps to follow </p>
+<p>To implement a machine learning workflow, the COPML framework suggests a series of steps to follow that help better understand the requirements and what is needed to implement the project. </p>
+<p>The requirements for a machine learning project can be broadly divide into two main categories with specific sub sections within each.</p>
+<p><strong>Business Requirements</strong></p>
+<ul>
+<li>Availability </li>
+<li>Effectiveness </li>
+<li>Automation</li>
+<li>Risk Management</li>
+</ul>
+<p><strong>Regulatory Requirements</strong></p>
+<ul>
+<li>Auditability </li>
+<li>Reproducibility </li>
+<li>Explainability</li>
+</ul>
+<p>Each of these requirements detailed further in <a href="../chapter-4/">chapter 4</a>. In order to meet these requirements, the steps that should be followed to better understand what is needed are:</p>
 <ol>
-<li><strong>Clarify Business Requirements</strong></li>
+<li>Clarify Business Requirements</li>
 <li>Assess Available </li>
 <li>Data Develop the Data Science Plan </li>
 <li>Model Deployment </li>
 <li>Model Operations</li>
 </ol>
-<p>Implementation Requirements Business Requirements Available Effective Automated (with Airflow) Low Risk Regulatory Requirements Auditable Reproducible Explainable</p>
 <h2 id="workflow-steps">Workflow Steps</h2>
 <p>The steps below follow the typical workflow for taking a machine learning project to production.</p>
 <h3 id="step-1-clarify-business-requirements"><strong>Step 1: Clarify Business Requirements</strong></h3>
@@ -731,17 +759,6 @@
 <p>In a scenario such as this, where the number of positive cases of pneumonia are low relative to the total number of people x-rayed, an<a href="https://machinelearningmastery.com/what-is-imbalanced-classification/"> imbalanced classification</a> could be a complicating factor. It could result in a situation where a model appears to be making accurate predictions (and by extension, fulfilling business requirements) but in reality it’s simply reflecting statistical probabilities.</p>
 <p>In order to better understand this point, let’s assume 1 in every 100 patients has pneumonia. This implies that 99% of x-ray images will have no indication of pneumonia. If our model simply classified every x-ray as normal (i.e. it never detects pneumonia) then most of the time the model would accurately classify x-ray images, it would be wrong in only 1% of cases. This would superficially satisfy the business success metrics as the number of cases flagged for corroboration through blood tests or manual assessment, would fall. This would in turn reduce the time and costs associated with pneumonia detection. However the real life implications of failing to identify a case of pneumonia would be very serious. Once the problem was eventually detected the project would, rightly, be considered a failure.</p>
 <p>The scenario described above shows why it’s so important for the design and maintenance of machine learning systems in production, to go beyond simple and efficient automation. It highlights the requirement for both statistical or mathematical capabilities and deep domain understanding and experience to deliver the benefit that a well implemented production machine learning process can bring.</p>
-<h2 id="cross-functional-teams">Cross Functional Teams</h2>
-<p><img alt="" src="../assets/Cross%20Function%20Teams.png" /></p>
-<p>The reality is that this kind of workflow requires input from different teams within the business. In other words, it introduces a cross-functional team requirement:</p>
-<ul>
-<li>The <strong>data engineering</strong> team needs to make sure that the data is clean, up to date and available.</li>
-<li>The <strong>data science</strong> team then needs to perform data exploration and model building</li>
-<li>The <strong>machine learning operations</strong> team needs to manage the model post-deployment and make sure that it is always available, operating accurately and continually accessible to the relevant business users.</li>
-</ul>
-<p>It is reasonable to expect that different parties within the cross-functional teams might have differing and strongly held opinions about how things should be done. Unless there is careful coordination, it is possible to inadvertently create the conditions for ‘The Great Circle of Blame’.</p>
-<p><img alt="" src="../assets/Great%20Circle%20of%20Blame.png" /></p>
-<p>This circle of blame describes a set of behaviours and attitudes that can arise within cross-functional teams wherein blame for things going wrong is attributed to colleagues based in other teams. For example, data scientists might blame their data engineer colleagues for not providing the data in their preferred format or that is not available. Data engineers might blame the data scientists for not adhering to corporate security standards during model development. ML Ops practitioners might express frustration about data scientists not writing tests for their models and data scientists might be exasperated by ML Ops refusal to accept Notebooks as working models. The Great Circle of Blame might look different in different organisations but if left unaddressed it can be a contributory factor for machine learning models failing to make it to production. In addressing this issue, it is important to develop agreed ways of working <em>and</em> to select a platform (and tooling) that is capable of supporting all members of the cross-functional teams to work in the agreed ways.</p>
 <div class="footnote">
 <hr />
 <ol>
@@ -779,13 +796,13 @@
       
       
         
-        <a href="../chapter-3/" class="md-footer__link md-footer__link--next" aria-label="Next: 3: Machine Learning Infrastructure" rel="next">
+        <a href="../chapter-3/" class="md-footer__link md-footer__link--next" aria-label="Next: 3: Cross Functional Teams" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              3: Machine Learning Infrastructure
+              3: Cross Functional Teams
             </div>
           </div>
           <div class="md-footer__button md-icon">

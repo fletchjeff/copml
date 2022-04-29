@@ -13,7 +13,7 @@
     
     
       
-        <title>4: COPML in Practice - Continuous Operations for Production Machine Learning</title>
+        <title>4: Machine Learning Infrastructure - Continuous Operations for Production Machine Learning</title>
       
     
     
@@ -24,7 +24,7 @@
         
           
           
-          <meta name="theme-color" content="#546d78">
+          <meta name="theme-color" content="#009485">
         
       
     
@@ -53,7 +53,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="blue-grey" data-md-color-accent="">
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="teal" data-md-color-accent="">
   
     
     
@@ -63,7 +63,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#4-copml-in-practice" class="md-skip">
+        <a href="#4-machine-learning-infrastructure" class="md-skip">
           Skip to content
         </a>
       
@@ -96,7 +96,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              4: COPML in Practice
+              4: Machine Learning Infrastructure
             
           </span>
         </div>
@@ -183,7 +183,7 @@
   
     <li class="md-nav__item">
       <a href=".." class="md-nav__link">
-        COPML - An Introduction
+        COPML - A Quick Introduction
       </a>
     </li>
   
@@ -228,7 +228,7 @@
   
     <li class="md-nav__item">
       <a href="../chapter-3/" class="md-nav__link">
-        3: Machine Learning Infrastructure
+        3: Cross Functional Teams
       </a>
     </li>
   
@@ -252,12 +252,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          4: COPML in Practice
+          4: Machine Learning Infrastructure
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        4: COPML in Practice
+        4: Machine Learning Infrastructure
       </a>
       
         
@@ -276,64 +276,16 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#why-not-just-use-continuous-delivery" class="md-nav__link">
-    Why not just use Continuous Delivery?
+  <a href="#data-access" class="md-nav__link">
+    Data Access
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#copml-overview" class="md-nav__link">
-    COPML Overview
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#business-requirements" class="md-nav__link">
-    Business Requirements
-  </a>
-  
-    <nav class="md-nav" aria-label="Business Requirements">
+    <nav class="md-nav" aria-label="Data Access">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#availability" class="md-nav__link">
-    Availability
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#effectiveness" class="md-nav__link">
-    Effectiveness
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#automation" class="md-nav__link">
-    Automation
-  </a>
-  
-    <nav class="md-nav" aria-label="Automation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#data-ingest-cde" class="md-nav__link">
-    Data Ingest (CDE)
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#risk-management" class="md-nav__link">
-    Risk Management
+  <a href="#feature-store" class="md-nav__link">
+    Feature Store
   </a>
   
 </li>
@@ -344,36 +296,104 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#regulatory-requirements" class="md-nav__link">
-    Regulatory Requirements
+  <a href="#data-exploration" class="md-nav__link">
+    Data Exploration
   </a>
   
-    <nav class="md-nav" aria-label="Regulatory Requirements">
+    <nav class="md-nav" aria-label="Data Exploration">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#auditability" class="md-nav__link">
-    Auditability
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#reproducibility" class="md-nav__link">
-    Reproducibility
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#explainability" class="md-nav__link">
-    Explainability
+  <a href="#source-control" class="md-nav__link">
+    Source Control
   </a>
   
 </li>
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#model-building" class="md-nav__link">
+    Model Building
+  </a>
+  
+    <nav class="md-nav" aria-label="Model Building">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-a-model" class="md-nav__link">
+    What is a model?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-formats" class="md-nav__link">
+    Model Formats
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-optimisation" class="md-nav__link">
+    Model Optimisation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#model-training" class="md-nav__link">
+    Model Training
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deploy-and-serve" class="md-nav__link">
+    Deploy and Serve
+  </a>
+  
+    <nav class="md-nav" aria-label="Deploy and Serve">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#batch-models" class="md-nav__link">
+    Batch Models
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#realtime-models" class="md-nav__link">
+    Realtime Models
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-registry" class="md-nav__link">
+    Model Registry
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#monitoring-systems" class="md-nav__link">
+    Monitoring Systems
+  </a>
   
 </li>
       
@@ -381,6 +401,21 @@
   
 </nav>
       
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter-5/" class="md-nav__link">
+        5: COPML in Practice
+      </a>
     </li>
   
 
@@ -427,64 +462,16 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#why-not-just-use-continuous-delivery" class="md-nav__link">
-    Why not just use Continuous Delivery?
+  <a href="#data-access" class="md-nav__link">
+    Data Access
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#copml-overview" class="md-nav__link">
-    COPML Overview
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#business-requirements" class="md-nav__link">
-    Business Requirements
-  </a>
-  
-    <nav class="md-nav" aria-label="Business Requirements">
+    <nav class="md-nav" aria-label="Data Access">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#availability" class="md-nav__link">
-    Availability
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#effectiveness" class="md-nav__link">
-    Effectiveness
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#automation" class="md-nav__link">
-    Automation
-  </a>
-  
-    <nav class="md-nav" aria-label="Automation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#data-ingest-cde" class="md-nav__link">
-    Data Ingest (CDE)
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#risk-management" class="md-nav__link">
-    Risk Management
+  <a href="#feature-store" class="md-nav__link">
+    Feature Store
   </a>
   
 </li>
@@ -495,36 +482,104 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#regulatory-requirements" class="md-nav__link">
-    Regulatory Requirements
+  <a href="#data-exploration" class="md-nav__link">
+    Data Exploration
   </a>
   
-    <nav class="md-nav" aria-label="Regulatory Requirements">
+    <nav class="md-nav" aria-label="Data Exploration">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#auditability" class="md-nav__link">
-    Auditability
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#reproducibility" class="md-nav__link">
-    Reproducibility
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#explainability" class="md-nav__link">
-    Explainability
+  <a href="#source-control" class="md-nav__link">
+    Source Control
   </a>
   
 </li>
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#model-building" class="md-nav__link">
+    Model Building
+  </a>
+  
+    <nav class="md-nav" aria-label="Model Building">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-a-model" class="md-nav__link">
+    What is a model?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-formats" class="md-nav__link">
+    Model Formats
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-optimisation" class="md-nav__link">
+    Model Optimisation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#model-training" class="md-nav__link">
+    Model Training
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deploy-and-serve" class="md-nav__link">
+    Deploy and Serve
+  </a>
+  
+    <nav class="md-nav" aria-label="Deploy and Serve">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#batch-models" class="md-nav__link">
+    Batch Models
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#realtime-models" class="md-nav__link">
+    Realtime Models
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-registry" class="md-nav__link">
+    Model Registry
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#monitoring-systems" class="md-nav__link">
+    Monitoring Systems
+  </a>
   
 </li>
       
@@ -542,142 +597,75 @@
                 
 
 
-<h1 id="4-copml-in-practice">4: COPML in Practice</h1>
-<p>In this section we will outline some specific implementation methods and actions to take when architecting and implementing production machine learning systems. We call this methodology Continuous Operations for Production Machine Learning (COPML). This is not just about automation of model tracking, it also includes the various factors that need to be considered so that machine learning projects continually deliver successful business outcomes. This is a methodology by which enterprise users can maintain production machine learning systems in place with the minimum amount of input human input and while also adhering to the specifics and the more intangible requirements for this production machine learning project.</p>
-<h2 id="why-not-just-use-continuous-delivery">Why not just use Continuous Delivery?</h2>
-<p><em>"Continuous Delivery is the ability to get changes of all types — including new features, configuration changes, bug fixes, and experiments — into production, or into the hands of users, safely and quickly in a sustainable way".</em></p>
-<p>- Jez Humble and Dave Farley</p>
-<p>It’s worth asking why an existing framework like continuous delivery (CD) can’t simply be adapted to work for production machine learning. Software engineers and teams that use CD effectively, will know that it provides an easy and efficient way to iterate and update software. In fact there are other approaches to conscientious operations for machine learning that take this approach: See <a href="https://martinfowler.com/articles/cd4ml.html">here</a>.</p>
-<p>However, there are some fundamental requirements that can’t be addressed through this process. CD may be able to keep models operating, however, it lacks the flexibility to address the less structured and clear-cut aspects of sustaining a project. The COPML methodology on the other hand is far more accommodating of necessary interventions to the system, whether these are automated or manual. Understanding when and how these interventions need to happen is an iterative process. In other words, there needs to be a period of initial adjustment during which optimizations can be made. CD cannot accommodate this.</p>
-<p>Another issue that makes CD a less than ideal approach for managing and sustaining machine learning projects in production is that the CD methodology has been optimized for software systems. However, data science teams are not primarily software developers –their interests and concerns are broader than the proper working of the code. They, necessarily, have to take a whole system view. Consequently, they need a methodology that allows for continuous operations and continuous optimization by people who are as skilled at understanding the output of the system as well as the statistical metrics underlying them.</p>
-<h2 id="copml-overview">COPML Overview</h2>
-<p>This methodology has two main success criteria, the fulfillment of business requirements and regulatory requirements. It costs money to get the infrastructure, software and people needed to implement effective machine learning applications and systems. Therefore, one important metric for success is a quantifiable return on that investment. Business requirements focus on indicators related to this outcome.</p>
-<p>The regulatory requirements relate to implementation considerations which ensure that the machine learning project is compliant with all the relevant legal, industry and ethical standards. In the next section we consider these two requirements in further detail and discuss how the COPML methodology delivers against them .</p>
-<h2 id="business-requirements">Business Requirements</h2>
-<p>As already discussed, a higher level business requirement is always the impetus for a machine learning project. There is usually an explicit metric associated with the business requirement, for example, in the churn reduction scenario described above, this metric was the churn rate and the target was for it to be reduced from 10% to 5%. Consequently, the focus for the machine learning project is the correct identification of customers who are likely to churn <strong>and the application of retention strategies.</strong> If this fall in the churn rate is achieved it is tempting to rule the project a success. However, it's possible for a project to satisfy its primary business metric but do so at too high a cost. If this happens the project will still be deemed a failure. This is why it is important not to over-capitalise these projects. Taking the following steps will help keep running costs down.</p>
-<h3 id="availability">Availability</h3>
-<p>Availability in IT terms is a reference to infrastructure uptime. If the machine learning model is able to make new inferences, it’s considered available. High availability design for IT systems is a well understood and documented field. The requirement here is to align the availability for the deployed machine learning models with the needs of the relevant business processes. Assuming the business is getting value from this machine learning model it needs to remain accessible, but there is context that needs to be set according to value derived from the machine learning model.</p>
-<p>In the churn example, the batch implementation does not require compute resources to be deployed continuously for the model to be useful. A simple implementation would probably run once a week, a table is updated with the relevant predictions and the retention process can be managed manually, using this data. Therefore the availability requirement can be satisfied by the underlying CML/CDSW platform that the job runs on. Using CML in the public cloud with the Jobs function will keep the costs relatively low while still meeting the business objective.</p>
-<p>For the pneumonia example however, the real-time model needs to be highly available, every day of the week. For a real-life use case with this level of importance, an uptime or availability metric might be set as high as 99.9% or 99.999%. In this instance real-time CML models can be deployed using replicas and availability metrics set in the public cloud to ensure near continuous availability of the API endpoint. However, in the case of especially high availability requirements, it would be best to implement a backup CML workspace in a different cloud provider or region, running the same model, also using replicas and have any applications fail over to using the backup model API.</p>
-<p>When considering the availability requirements for any production machine learning project, the key decision is the balance between cost of the infrastructure required to make the model available and the business value that the model provides.</p>
-<p><em><strong>Action Items:</strong></em></p>
-<ul>
-<li>Decide on the required availability for the model based on the business objective</li>
-<li>Create an architecture to support this availability requirement</li>
-</ul>
-<h3 id="effectiveness">Effectiveness</h3>
-<p>Once the machine learning model is in place and meets the availability expectations, it’s necessary to create measurable model performance objectives to evaluate the effectiveness of the machine learning model. The reality is that most machine learning projects implemented in an enterprise context are fairly mundane and lack the fanfare of beating a world chess or Go champion. However these projects still need to be performing at a high enough level for the business to derive benefits from the money invested into it.</p>
-<p>Creating a measure of effectiveness requires well-defined success metrics for the outcomes of the machine learning model implementation. These metrics should cover both the statistical/mathematical performance of the model and its satisfaction of business objectives. We have seen a tendency among data science teams to focus very heavily on the statistical measures of model performance. While this is important, it’s not necessarily the most important yardstick of success.</p>
-<p>For the churn prediction example, the business set a churn rate target i.e. to drop the monthly customer churn numbers from 10% to 5%. The model can be measured statistically using one of the binary classification evaluation methods available. If the chosen measure is <a href="https://en.wikipedia.org/wiki/Accuracy_and_precision#In_binary_classification">accuracy</a>, the model’s statistical performance will be its ability to accurately predict which customers will churn and which won’t. The example project creates a model that has an accuracy measure of 80%. Assume that once the model is in place, those customers who are predicted as likely to churn are put through some retention process that keeps the customer rather than having them churn. This will have two effects: Firstly this will reduce the churn rate for that month of measurement, let’s say from 10% to 7%, but it will also reduce the accuracy of the model. Those customers who were predicted to churn have gone through the retention process and will now stay. Therefore when measuring the model performance at the end of the month, the accuracy could drop to 75%. But the model is still effective. However it would now be prudent to retrain the model as some customers will have churned despite the retention process and the model can now be optimized to better identify these customers and possibly implement a different retention process.</p>
-<p>For the pneumonia model, the key metric is the false positive rate as the consequences of an inaccurate diagnosis are severe. This means optimizing the model for <a href="https://en.wikipedia.org/wiki/Sensitivity_and_specificity#Sensitivity">sensitivity</a>. In the example project the first model, which is used to detect if the patient has pneumonia, currently has an accuracy of 97%. The second model, which is then used to predict the type of pneumonia needs to be optimized for accuracy. The example project has an accuracy of 80%, which will be considered the minimum accuracy level for the project. Both measures need to be tracked over time, but this is done in batches where the outputs from the models are then compared with the real-world values to check the model performance. The key business metrics to track are the number of false negatives the first model produces and the number of times either model requires human intervention to confirm a prediction. Tracking these values over time will determine the overall effectiveness of the whole project.</p>
-<p>This process of continuous testing and retraining is outlined in the next stage, but for now the requirement is to create an effectiveness measure that allows for an evaluation of the overall machine learning project with the business objectives.</p>
-<p><em><strong>Action Items:</strong></em></p>
-<ul>
-<li>Set up agreed measurements for the effectiveness of this production machine learning process. These should include both statistical measures for explicit model performance and business metrics for overall performance. This can include costs of infrastructure and people involved as even a well performing machine learning model may simply cost too much to be of long term business benefit.</li>
-<li>Create trigger points for these effectiveness measurements and actions to be taken when a threshold is reached.</li>
-</ul>
-<h3 id="automation">Automation</h3>
-<p><img alt="" src="../assets/Automation.png" /></p>
-<p>One of the biggest operational costs of any machine learning project will be the teams that support it. There is the direct cost associated with the various data teams working on their respective parts of the project to get things up and running, but there is also the opportunity cost of having these teams do something that could be automated rather than working on other projects. As much of the process as possible needs to be automated. Within the standard workflow described, the following components can be automated with components from CDP.</p>
-<h4 id="data-ingest-cde"><strong>Data Ingest (CDE)</strong></h4>
-<p>This can be a continuous process or a periodic one but the actual implementation isn’t determined solely on the requirements of the downstream applications that are dependent on the model. The large data platform requirements will also have to be taken into account.</p>
-<p>For the churn example, customer data is always changing and many other systems use this customer data. Therefore data ingest will likely be automated anyway, outside of the need for training the machine learning models. However there might be an intermediate feature creation step that isn’t part of the standard pipeline which will also have to be automated. A CML job can be run once a week that creates a feature store that will be used to retrain the model.</p>
-<p>For the pneumonia x-ray example there needs to be an automated data collection process that puts the images and the results from the predictions made by the model(s) and any manually obtained data into a data store that can be used for model retraining.</p>
-<p><em><strong>Action Item:</strong></em></p>
-<ul>
-<li>Decide on any new or additional data ingested automation tasks specific to this machine learning project that is covered by other data usage requirements. This could include creating a feature store specific for machine learning model training. Schedule these as automated processes to run on the required frequency.</li>
-<li>Assume the end state for this data ingestion is to make the data available to model retraining jobs as well as the data science teams for the purpose of (additional) exploratory data analysis and model optimization.</li>
-</ul>
-<p><strong>Model Monitoring (CML Model SDK and Jobs)</strong></p>
-<p>Model monitoring automation will likely follow with the availability requirement. Automated monitoring should cover the availability and effectiveness requirements of the project. These factors should also inform the frequency of monitoring.</p>
-<p>In the churn example, customer churn is measured monthly, therefore an automated process that runs once a month to evaluate the model performance will suffice. Depending on the outcome of the model evaluation process, other tasks can be triggered e.g. model retraining, model redeployment etc.</p>
-<p>For the pneumonia x-ray example, the model uptime needs to be monitored to ensure compliance with the stated availability metric. Whenever the model becomes unavailable, the monitoring process should raise an alert. The performance of the pneumonia x-ray model can be automatically evaluated after a certain number<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> of predictions have been made. This will also inform decisions about thresholds set for retraining etc.</p>
-<p>Some threshold values will serve as indications of declining model performance or significant changes in the data landscape which can not be fixed purely through automated remedies. These values need to be identified during the model build and exploratory data science phases and (can be programmatically) set as additional thresholds in model monitoring. When these thresholds are breached, the subsequent automation tasks should include an alert or notification for human evaluation. In the churn example, the model accuracy dropping to 70% (or lower) for three consecutive months with a customer churn rate that remains at 10% (instead of falling), is considered a performance failure scenario. If the automated model retraining and redeployment interventions fail to improve the model performance, then this is a trigger for an evaluation of the entire project.</p>
-<p><em><strong>Action Items:</strong></em></p>
-<ul>
-<li>Decide which metrics (such as granularity and frequency) need to be monitored as part of this project informed by insights gleaned from the availability and effectiveness steps.</li>
-<li>Implement the monitoring processes and create triggers and actions should any metric cross a threshold for these values.</li>
-<li>Consider how re-evaluation of the ML project/application will be triggered and which automated tasks should trigger this and at what threshold.</li>
-</ul>
-<p><strong>Model Retraining (CML Jobs)</strong></p>
-<p>In a constantly changing data environment, the performance of machine learning models can ‘drift’ and become less accurate (and by extension, less value-adding) over time. The Model Monitoring section of the workflow addresses requirements related to tracking and detecting changes in performance. It also supports some automated mitigations for drops in performance e.g. model retraining. This is one of the easiest parts of machine learning automation to implement, because the model training process has already been created during the original model build. Provided the data is accessible, whether in raw form, or in an intermediate form via a feature store, most machine learning platforms will support automated model retraining. The CDSW/CML Jobs capability allows for model retraining automation with variable infrastructure requirements.</p>
-<p>For both example projects, the model retraining is done using the CML/CDSW Jobs function. This is done using 2 separate jobs. The first job will check the current metrics stored with the deployed model using the <a href="https://docs.cloudera.com/machine-learning/cloud/model-metrics/topics/ml-tracking-model-metrics-without-deploying-model.html">model metrics</a> feature. If the value of the metric drops below a threshold, a second job is triggered that will perform the model retraining and redeployment.</p>
-<p>For the pneumonia x-ray example, a real world implementation using tens of thousands of images and a more complex pretrained model, model retraining could require 100s of GPU nodes for a few days to run. CML in the public cloud can facilitate this rapid scale up and scale down capability.</p>
-<p><em><strong>Action Items:</strong></em></p>
-<ul>
-<li>Decide on the infrastructure needed for model retraining and the likely frequency.</li>
-<li>Implement an API based automated system that can launch and run the model retraining process from a task within the model monitoring process or any other external process.</li>
-</ul>
-<p><strong>Model Re-Deployment (CML Models and Jobs)</strong></p>
-<p>Once a model has been retrained, this new model needs to be deployed. The model deployment (i.e. real-time or batch) will dictate the type of automation that will need to take place.</p>
-<p>For the churn example, when implementing in batch mode, this automated process will be to replace the model artifact used during the batch run. The model training job in the sample project overwrites the file used for the batch prediction job.</p>
-<p>For the pneumonia x-ray example, this is a live model and needs to adhere to an uptime requirement. The example project redeploys the newly trained models to replace the existing live model API endpoints. For a real world implementation, the new model end-points should be deployed and tested using the newly trained model first and then the overall pipeline can be switched to this new model. CML provides for this automation through the model API, but monitoring and keeping track of availability should be maintained during this process.</p>
-<p><em><strong>Action Items:</strong></em></p>
-<ul>
-<li>Create an automated task that will deploy the new model into production and decide on how it will be triggered.</li>
-<li>Maintain model monitoring for real-time models that have an uptime requirement</li>
-</ul>
-<h3 id="risk-management">Risk Management</h3>
-<p>From the perspective of the business, the success or failure of the machine learning project is often viewed in terms of the project's ability to deliver a return on investment. The assessment of risk can be quite narrow and may not be considered in regulatory, security and reputational terms. Issues of security and reputational risk need to be considered and addressed as part of the larger project implementation (regulatory risk is addressed in the next section). As is the case with any applications within a data platform that handle personally identifiable information (PII), machine learning models need to be appropriately secured. This is true even though the model does not directly ingest PII. There are real risks of inadvertently leaking sensitive data if the model is accessed by <a href="https://www.oreilly.com/content/proposals-for-model-vulnerability-and-security/">malicious actors</a> e.g. using so-called inversion or membership inference attacks facilitated through surrogate models<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup>.</p>
-<p>Another source of risk for a machine learning project lies in unidentified biases that are inherent in the underlying data used to train the models. This type of risk can be hard to detect and quantify. This is why we recommend that for any significant business investment in machine learning, organizations should consider commissioning an <a href="https://www.ajl.org/connect/request-algorithmic-audit">external auditor</a> with experience with these kinds of projects. There is also newly proposed EU <a href="https://www.politico.eu/article/europe-strict-rules-artificial-intelligence/">legislation</a> (pending review) that will limit the purposes to which machine learning can be applied.</p>
-<p>Note: For both example projects, it is assumed that these implementation risks are managed and implemented outside of the CML/CDSW project. Both projects contain PII which the CDP platform can help to <a href="https://docs.cloudera.com/cdp-private-cloud-base/7.1.6/security-overview/topics/cm-security-overview.html">secure</a> in a number of ways including, for example, <a href="https://docs.cloudera.com/cdp-private-cloud-base/7.1.6/security-how-to-guides/topics/cm-security-redaction.html">redaction</a>. Neither of the example projects referenced in this document has been assessed with regards to inherent bias in the underlying data.</p>
-<p><em><strong>Action Items:</strong></em></p>
-<ul>
-<li>For projects with any significant business investment is required and where there are large data sets of any personally identifiable information, the data and the security processes should be externally audited to check for bias and security risks.</li>
-</ul>
-<h2 id="regulatory-requirements">Regulatory Requirements</h2>
-<p>Many countries and regions have regulatory requirements which govern the type of data that can be collected, the conditions under which this can be done and the ways in which such data must be managed. For example, organisations operating within the European Union are subject to the General Data Protection Regulation (<a href="https://en.wikipedia.org/wiki/General_Data_Protection_Regulation">GDPR</a>), and healthcare providers in the US have to comply with the Health Insurance Portability and Accountability Act (<a href="https://www.hhs.gov/hipaa/index.html">HIPAA</a>). Many of these regulations are understood with regards to data privacy and security. However there are specific conditions, especially within GDPR, that have implications for the use of automated decision making. For example, Article 22 of GDPR<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup> grants the data subject the <a href="https://en.wikipedia.org/wiki/Right_to_explanation#European_Union">right to an explanation</a> for decisions that are solely algorithmically-driven. This has implications for the design and implementation of machine learning applications, including whether or not to incorporate (demonstrable) human oversight, and if so, where and how. Satisfying the requirement for an explanation of an algorithmically-driven decision would involve finding the correct version of the data and machine learning model used to make the decision. It would also be necessary to explain which variables within the data informed the model’s decision. Lastly, it is likely that your organization will need to demonstrate the consistency of the decisions made by the ML application by being able to reproduce the decision given the same data and model. Otherwise, a complainant could credibly claim that your ML application or system leads to arbitrary and potentially unfair outcomes. Even if your ML-enabled application or system has sufficient and demonstrable human oversight, it is still a good idea to be able to answer these questions as these are the types of questions a regulator might ask. That’s why the rest of this section is dedicated to exploring how Cloudera’s CDSW/CML experience coupled with the COPML methodology can help you build ML implementations that are auditable, reproducible, and explainable.</p>
-<h3 id="auditability">Auditability</h3>
-<p>The regulatory requirement regarding auditability for machine learning is specific to the model and data used to make a prediction. The requirement for GDPR is to know which specific version of the model made the prediction, the data for that prediction and the data used to train the model. The first two requirements are specific to auditability and in CML/CDSW, these requirements can be implemented using the <a href="https://docs.cloudera.com/machine-learning/cloud/model-governance/topics/ml-enabling-model-governance.html">model governance</a> feature to track model versioning and data lineage (in CML/CDSW this is the equivalent of a model registry) and the <a href="https://docs.cloudera.com/machine-learning/cloud/model-metrics/topics/ml-enabling-model-metrics.html">model metrics</a> feature to track the input data upon which the model makes prediction. <em>Note: In this document we use the terms prediction and inference interchangeably, although the latter is the more academic term for the use of a model for making predictions.</em></p>
-<p>The final requirement relates to the data used to train the model and is covered in the section on reproducibility.</p>
-<p>Both of the example projects featured in this paper use the model metrics and model governance features of CML/CDSW and can therefore be considered as auditable.</p>
-<p><em><strong>Action Items:</strong></em></p>
-<ul>
-<li>Ensure any machine learning models that are implemented that have a material effect on a data subject are tracked. This includes identifying the specific model and model artifact used to make the prediction and any data used for the prediction.</li>
-</ul>
-<h3 id="reproducibility">Reproducibility</h3>
-<p>There are two requirements that need to be satisfied in order for the output of a machine learning project or application to be considered reproducible. Firstly, any prediction made by the same version of the model, with the same input data, needs to give the same prediction. Secondly, when a new version of the model that has been trained on the same data set as previous versions of the model is given the same input data, the same parameters and the same random seed, it should make the same predictions. There might be some minor variability if a model is trained on a different architecture but this should be insignificant when comparing the statistical metrics and outputs during model testing. If a new model is trained using that same input data, parameters and methodologies as an original model and yields the same prediction results, the model can be said to be reproducible. With regards to the first condition, it’s worth noting that there will be some variability in the response of certain model types but these are rare and usually not found in enterprise implementations. Specifically, if there is a model that is used for decision making that affects a data subject (i.e. the life of an actual human) the same model should always make the same prediction when provided with the same input data.</p>
-<p>These requirements highlight the main factor for reproducibility: access to the original data used to train the model and the source code created to run the model training process. However, the size of the datasets in an enterprise implementation presents some complications. That’s why the CML/CDSW model governance feature uses metadata to track lineage of the data, not the actual data directly. The data can be stored in a snapshot and added to the lineage metadata. In an academic or proof of concept (PoC) context, the data sizes used for machine learning projects are often small enough that the data can be bundled together with the model artifacts. But for larger datasets (i.e. 10GB or more), something enterprise implementations often require, bundling the data with the model artifact is impractical. If the implementation also uses a feature store, this can complicate things further if the original source data is not also stored in the feature store and there is some machine learning based preprocessing e.g. PCA that is required to be part of the process to reproduce the model. Within the CDP platform, there are multiple data storage and database options available and each has its own backup and restoration policies. Depending on the location of the data storage (e.g. on premise HDFS or in the public cloud using S3 or ADLS), the data replication and ‘snapshot’ management process will be different.</p>
-<p>Given how data grows in size over time there are some decisions to be made at the start of the project regarding data reproducibility. These are covered in the action items later in this section.</p>
-<p>The final part of the reproducibility requirement is for the parameters and configuration details used to train the model. Each training run that creates a model which is then put into production will have a set of parameters, hyperparameters, config details etc used during the training process. Recreating these models requires both the data and these parameter details. This is often implemented using version control systems like git, but these updates have to be triggered manually. Using the Jobs feature for model training in CML/CDSW and adding parameters details to the output of the job will <a href="https://docs.cloudera.com/machine-learning/cloud/jobs-pipelines/topics/ml-viewing-job-history.html">keep a history</a> of the model training process thus allowing for replication by others. This can be further <a href="https://docs.cloudera.com/machine-learning/cloud/model-governance/topics/ml-registering-lineage-for-model.html">augmented with metadata</a> bundled with the deployed model using the CML/CDSW model governance capability that includes the details of the job that was run to train the model.</p>
-<p>Given the high-impact of the decisions that the pneumonia detection model will inform, it is critical that it be reproducible. As this project uses a fixed amount of images and doesn't include any additional ones for retraining purposes, it does not demonstrate automated retraining. However, the process to create a snapshot in the Cloudera Operation Database experience (COD) is documented <a href="https://docs.cloudera.com/operational-database/cloud/managing-database/topics/cod-backing-up-table.html">here</a>. In a real world implementation, each time a model is retrained, this snapshot process needs to be run and the snapshot detail and model version information tracked.</p>
-<p>While the potential impact of the churn model is relatively low, there is still value in making it reproducible. Incorrectly, predicting a customer as being at risk of churning and offering them free call minutes or data as an intervention, is unlikely to run afoul of regulatory protections. As such it’s unlikely that a regulator will demand an audit. Despite this there are other good reasons for facilitating reproducibility e.g. debugging. This is especially true if the output of one model might feed into another system downstream. This type of entanglement makes a systematic approach to debugging even more important.</p>
-<p><strong>Action Items:</strong></p>
-<ul>
-<li>Understand how the model is going to be used and check the extent to which the model’s predictions could affect people’s lives. Also, understanding the former will support your ability to assess the latter. This information will also help determine the best way to make the model reproducible. It’s also worth noting that there might be regulatory implications that need to be taken into account as well.</li>
-<li>If necessary, create an automated process that replicates or creates a snapshot of the data used each time the model is trained/retrained.</li>
-<li>Create a process that will keep the details of the parameters and any other pertinent configuration information each time the model is trained/retrained.</li>
-</ul>
-<h3 id="explainability">Explainability</h3>
-<p>The final regulatory requirement has to do with explainability. In the context of GDPR, the data subject has the <a href="https://en.wikipedia.org/wiki/Right_to_explanation#European_Union">right to an explanation</a> for a decision, if it was solely algorithmically-driven. This is perhaps less well defined and understood than having a system that is auditable and reproducible as the notion of explainability is less concrete and measurable. But the consideration here is for facilitating the understanding of the person impacted by the model-driven decision about the factors that informed that outcome. This particular topic has been covered in the <a href="https://ff06-2020.fastforwardlabs.com">FastForward Labs report on Interpretability</a>. For a simple single variable linear model, there is very little that needs to be explained, but the inner workings of neural networks or complex tree models are more challenging to explain and understand.</p>
-<p>Techniques like Local Interpretable Model-agnostic Explanations (LIME) and SHapley Additive exPlanations (SHAP), which are discussed in the FFL report, provide good frameworks for understanding the reason a model made the decision that it did. However, explainability is not as straightforward to implement as auditability and reproducibility. While having explainable models is not always a regulatory requirement, it is often useful as a technique to check your own understanding of how the model works. In fact this was the case for the creators of LIME. Their original implementation of LIME highlighted how the model to which it was applied, while still reasonably accurate, was preferencing data attributes that the data scientists did not expect it to. This understanding helped them (the creators of the LIME) better understand why the model produced inaccurate predictions for a specific subset of the data it encountered.</p>
-<p>While the churn application does need to be explainable to customers, explainability is very useful to the business users. Specifically, by understanding which variables inform the model predictions they are better able to decide which retention strategies might work best. The application within the churn example project provides a useful visualisation of the customer-related features that the model identifies as highly correlated<sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup> with churn.</p>
-<p><img alt="" src="../assets/18.png" /></p>
-<p>The pneumonia model should be made as explainable as possible as it has real world consequences. The data is not tabular though, the model is just working with the input images. The project implements a version for LIME that highlights which parts of the image were considered important to the model when making the prediction. This should be something that is useful to someone with the required medical training to know if the model is looking at the right part of the image to make the predictions that it is.</p>
-<p><img alt="" src="../assets/19.png" /></p>
-<p><strong>Action Items:</strong></p>
-<ul>
-<li>Decide if the model needs to have an explainability framework attached to it. If it is materially affecting someone’s life, then it does.</li>
-<li>Choose an appropriate explainability framework for the model type and check if it makes the predictions more understandable to someone who is not involved in the project.</li>
-<li>Automate the process updating of this explanation framework with each model training job. If the model changes, it's likely that the explanation framework will become less effective for this new model.</li>
-</ul>
-<div class="footnote">
-<hr />
-<ol>
-<li id="fn:1">
-<p>This threshold will be determined by a number of factors such as the degree of variability in the underlying data, the volume of predictions made by the model relative to the number of examples it was trained on etc.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
-</li>
-<li id="fn:2">
-<p>There are other risks as well. For example, the paper, <a href="https://arxiv.org/pdf/1802.08232.pdf"><em>The Secret Sharer: Evaluating and Testing Unintended Memorization in Neural Networks</em></a> explores the risk of inadvertent memorization by neural network models.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
-</li>
-<li id="fn:3">
-<p><a href="https://gdpr-text.com/read/article-22/">https://gdpr-text.com/read/article-22/</a>&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
-</li>
-<li id="fn:4">
-<p>It is worth highlighting here that correlation isn’t causation, consequently, there are risks to building retention purely on the basis of correlation. Cloudera Fast Forward Lab’s <a href="https://ff13.fastforwardlabs.com">Causality for Machine Learning report </a>explores the application of causality in a machine learning context.&#160;<a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">&#8617;</a></p>
-</li>
-</ol>
-</div>
+<h1 id="4-machine-learning-infrastructure">4: Machine Learning Infrastructure</h1>
+<p>This section highlights which aspects of your infrastructure, platform and tooling are required in order to support the cross-functional teams involved in delivering the machine learning workflow described in <a href="../chapter-2/">chapter 2</a>. The details provided here are include specific reference to popular (at the time of writing) open source tools. These ideas can be applied to most ML platforms or a bespoke build comprising various components from the Open Source Software (OSS) world. It’s worth noting that this latter case can present its own set of issues. This section is applicable to the workflow concept. This is different to the use of ML Pipelines, which can fit into one or more of the infrastructure categories below.</p>
+<h2 id="data-access">Data Access</h2>
+<p><img alt="" src="../assets/Data%20Access.png" /></p>
+<p>The starting point for all machine learning projects, after the business requirement, is data. The first thing to consider is what data is already being stored by the organisation and whether it is applicable to the project. If the available data fits the requirements, then the next consideration is how accessible it is to the people and processes that need it. However, if there are gaps in the data, then it might be necessary to acquire additional data. This can come from internal data sources which aren’t collected or stored in an accessible manner. This data could also come from an external third party provider. However the data is acquired, it will all need to be accessible to the people and processes that need it within the overall machine learning workflow.</p>
+<p>Another point of consideration for the organisation is whether there is value in storing the products of intermediate data processing, such as features (representations of data that can be ingested by models), within a feature store.</p>
+<h3 id="feature-store">Feature Store</h3>
+<p>At present, there is no consensus on the term feature store or whether <a href="https://towardsdatascience.com/do-you-really-need-a-feature-store-e59e3cc666d3#:\~:text=The%20canonical%20use%20of%20a%20feature%20store\&amp;text=are%20used%20in%20multiple%20models,always%20need%20a%20feature%20store.">you really need to use one</a>. In its simplest form it can be considered a store for curated features so they can be reused. In its more complex manifestation, a feature store might go beyond facilitating access to features and also seek to deliver high availability and low latency in production as well as more <a href="https://eugeneyan.com/writing/feature-stores/">complex requirements</a>.</p>
+<p>In machine learning, model training requires the inputs for the model training process to be represented as numeric values. As an example, categorical variables like red, green, and blue must be transformed via a process like <a href="https://machinelearningmastery.com/why-one-hot-encode-data-in-machine-learning/">one hot encoding</a>. Relatedly, certain machine learning algorithms work better when numeric inputs are scaled or normalised. Scaling is the process of taking a column of numbers that ranges from, for example, 1 to 1000 and creating a new column that ranges from 0 to 1 (often referred to as normalising) or -1 to 1 (often referred to as standardising). This represents the final stage of the data preparation before it can be used in the machine learning model training process. This feature data is not necessarily useful to other users of the data platform outside of machine learning model training though.</p>
+<p>In some machine learning implementations feature creation is incorporated into the model training process using a ‘pipeline’ i.e. an automated sequence of steps. This pipeline will create the features needed for the model training process. These features are ephemeral in nature – they are discarded once the model training process is done. However, some workflows allow these intermediate features to be more permanent by storing them in a feature store. There can be benefits to doing this. For example it can help save on the compute resources required or speed up the process of hyperparameter optimization by removing the need to recalculate the extracted features for each model training run. Feature stores can also help with reproducibility. We’ll cover this in a bit more detail later in this white paper.</p>
+<p>From a data engineering perspective, Data Access is primarily focused on making data accessible by the data science and ML Ops teams. The data needs to be clean and as up to date as is necessary to meet the business requirement. This data could be in the form of files on a local file system or a cloud object store, or it could be structured data that lives in an Data Warehouse</p>
+<p>The decision about what to use depends on the particular machine learning project and the data used for it. It can be tabular data, or document-like key-value data, or binary data like images and audio files. Keeping data within the stack minimises the complexity of security and governance of moving data between disparate systems.</p>
+<p>Putting extracted features into a feature store raises the question of responsibility. There are no hard and fast rules about this. Our advice is that the relevant teams - data engineering, data science or model operations- decide how responsibility is allocated based on relevant skills and knowledge. </p>
+<p>There are tools that are specific to providing feature store capabilities like <a href="http://feast.dev/">Feast</a> and <a href="https://www.tecton.ai/">Tecton</a>, alternatively you can co-opt your existing Data Warehouse to store features as required. </p>
+<h2 id="data-exploration">Data Exploration</h2>
+<p><img alt="" src="../assets/Data%20Exploration.png" /></p>
+<p>Exploratory data analysis (EDA) is a fairly well understood function within the data science community. There are well established tools like <a href="https://jupyter.org/">Jupyter Lab</a> and <a href="https://www.rstudio.com/products/rstudio/#rstudio-desktop">R Studio</a> that provide comprehensive EDA capabilities.</p>
+<p><img alt="" src="../assets/10.png" /></p>
+<p>It is at this stage that the data science team will look at the ‘shape’ of the data and come up with a plan for building a suitable model. EDA is often combined with the Model Building stage, however this doesn’t mean a single team necessarily manages the entire process. It may be that there are good organizational reasons to split this activity, for example to accommodate areas of specialization. Some personnel may be more inclined towards statistical data analysis and so focus on EDA while others might specialise in model optimization and concentrate on that part of the model development process.</p>
+<p>What is most important is that at this stage the data science team should have easy access to all the relevant data and have the flexibility to augment that data (if necessary) in order to best serve the business requirement.</p>
+<h3 id="source-control">Source Control</h3>
+<p>One of the main parts of the artifacts created during the various stages of deploying a machine learning project is the actual code written by the data scientists and machine learning engineers. Creating code usually starts once Data Exploration starts, but there may be some code that is used to facilitate or create data that is needed for data access. These code artifacts need to be persisted and stored and have the ability to keep track of a history of changes. This is required for the auditability and regulatory requirements discussed in <a href="/chapter-5/#regulatory-requirements">chapter 5</a>, but also for the developers to be able to collaborate effectively and roll back if any changes are made that cause issues with the project. This is where source control comes into play. Like any other form of software development, not all changes to code are significant, but anything that is considered significant or just as a way to store the current state of the code and other software artifacts, source control tools are invaluable.</p>
+<p>Source control systems are a solved problem, with many feature rich, tried and tested tools available. Most data science and machine learning tools will have integrations with any git compliant source control system: Github, Gitlab, Bitbucket etc. Some source control systems have workflow automation tools built in that can integrate with the APIs from other tooling you have chosen.</p>
+<p>The main thing to keep in mind is that source control is used to store the code. It can be used to store other artifacts, like saved model files or data sets, but it's not designed for that. Source control systems should be used as part of the overall platform to manage version control for software code.</p>
+<h2 id="model-building">Model Building</h2>
+<p><img alt="" src="../assets/Model%20Building.png" /></p>
+<p>Model Building encompasses creating the first versions of the model that will be deployed into production. This will usually cover Feature Generation and the first few iterations of model training. This also also includes the standard machine learning processes of model evaluation and optimisation, but it does not always need to include those steps. While model building is often done in conjunction with the previous step of Data Exploration, bigger teams might support some degree of specialisations of roles. Some team members will focus on implementing the best approach to addressing the business use case while others might concentrate on model selection and optimization. For the sake of clarity, let's confirm what is meant by a <strong>model</strong> here. The code used to create the model will likely include a current set of optimizations and hyper parameters specific to the model. This code and any iterations used to create a new version of the model that contains changes to the way the model be trained should be checked into the source control system.</p>
+<h3 id="what-is-a-model">What is a model?</h3>
+<p>The term model has many uses within different contexts and its meaning can change even within the data science context. For the purpose of this document a model is:</p>
+<blockquote>
+<p>A combination of a data transformer, an algorithm and configuration details that can be used to make a new prediction based on new data.</p>
+</blockquote>
+<p>Regardless of whether this is implemented as a single step, a couple of steps that involve getting the transformed data to and from a feature store, or an activity within a pipeline, the definition still holds. The final form of the model is an artifact.</p>
+<h3 id="model-formats">Model Formats</h3>
+<p>The final trained model artifact is a file that can be loaded at a later date and be used to make new predictions. This file can exist in a variety of formats, from serialised files like a <a href="https://docs.python.org/3/library/pickle.html">Python Pickle</a> or a <a href="https://docs.h2o.ai/h2o/latest-stable/h2o-docs/productionizing.html#about-pojo-mojo">POJO</a> if you're using H2O. There are many model format options available, a good place to find the most commonly support formats is in the list supported by <a href="https://www.mlflow.org/docs/latest/models.html#built-in-model-flavors">MLFlow</a></p>
+<h3 id="model-optimisation">Model Optimisation</h3>
+<p>The initial model building process incorporates some work towards improving model performance through hyperparameter optimization and some exploration of different approaches to feature creation. MLFlow is one of the more commonly used tools of model optimisation, along with other OSS tools such as TPOT, auto-sklearn, MLFlow etc. A common standard approach to building machine learning models involves evaluating a models performance against test or validation datasets and optimising for algorithm selection, feature generation and hyperparameter tuning. A model can be built using all or none of these, or using an automated process to that will do this for you. </p>
+<p>AutoML and other automated hyperparameter optimization tools are useful but should be considered in light of available compute resources and machine learning skills. A data scientist with enough experience and domain expertise will probably know what to do to get to an optimized model more quickly and cheaply than an AutoML tool would. For many use cases an AutoML tool is no replacement for an experienced data scientist, who will be able to develop a more effective and interpretable model. Consequently, it should not necessarily be included as part of the process for all new models if it doesn’t need to be.</p>
+<p>It is also worth considering if it is possible to use some off-the shelf model or service to use to make predictions rather than going through the process of training your own model. For use cases that are based ib natural language processing or computer vision, especially if its based on commonly used data, the services or prebuilt models available will very likely be better than anything an enterprise can create. For cases where the data is a bit more specific to your use case, then applying transfer learning to an existing model would still be better than training a model from scratch. </p>
+<p>The infrastructure needed for doing model building and training is another point of consideration. The next section explores this further but it’s worth noting even during the early stages of model building, model optimization will require several iterations of model training. The type of model, the size of the data and available compute resources will dictate what kind of infrastructure is most suitable for running the model training process. For example, training a big neural network on a very large dataset will require multiple GPU nodes to complete in a reasonable amount of time, but this is expensive infrastructure. In this situation, training needs would be better fulfilled using the public cloud to take advantage of its ability to autoscale the number of nodes required to meet the compute demand. If this were a smaller model training process or public cloud was not available, then using an existing on-premise infrastructure will suffice.</p>
+<p>Once the initial model build is complete and there is a working process for training the model, this needs to be automated so that the model can be periodically re-trained without direct input from the data science team.</p>
+<h2 id="model-training">Model Training</h2>
+<p><img alt="" src="../assets/Model%20Training.png" /></p>
+<p>As part of the ongoing production machine learning workflow, the machine learning models will need to be periodically retrained. This may be because new data becomes available, the data landscape changes or a newer version of the algorithm is released that optimizes some part of the model's performance. Having the right infrastructure becomes more important here as this often needs to happen without direct involvement from the data science teams. The machine learning operations team needs a way to run a model training process directly on the available data. This may include a pipeline that does feature creation as part of the model training, or separate processes that put the features into a feature store first. Where the model training jobs sit will depend on the use case.</p>
+<p>These model training jobs need to be automated in a way that they can be triggered through the monitoring system (discussed later in the document). The requirement is that model training jobs are schedulable and triggerable through an API call from a process running as part of the ongoing model monitoring system. This can be done using an orchestration and scheduling tool like <a href="https://airflow.apache.org/">Apache Airflow</a> or an ML Pipeline deployment tool like <a href="https://www.kubeflow.org/">Kubeflow</a>. Using a public cloud providers implementation of Kubernetes to scale up and down the resources that are available for model training would be ideal. This allows it to support model training jobs that need a lot of capacity for a short period of time.</p>
+<p>A hybrid cloud approach would probably provide the optimal price to performance ratio for organisations that need to manage model training for a variety of models with a range of infrastructure requirements. Having said that, there are still complexities around data locality and its impact on efficient data access that need to be understood and managed. </p>
+<!-- The economics of hybrid cloud machine learning is discussed in further detail [here] 
+** TODO - write this -->
+
+<h2 id="deploy-and-serve">Deploy and Serve</h2>
+<p><img alt="" src="../assets/Deploy%20Serve.png" /></p>
+<p>The trained model now needs to go into <strong>production</strong> i.e. the model’s output needs to be 'served' to or integrated into downstream applications. Depending on the availability requirements discussed in <a href="../chapter-5/">chapter 5</a>, some organisations run completely separate environments to differentiate between development and production systems. Once a model has been developed and tested on the development system, it is moved on to the production system for deployment. This allows for different architectures and configurations between the two platform types to meet differing compute and availability requirements. These kinds of development to production workflows are traditionally implemented using an a CI/CD process backed by a tool like git/Github.</p>
+<p>The infrastructure that will be used to host the deployed models can be existing, preconfigured compute or dynamically created using Kubernetes or similar virtual environments. The CI/CD process can create or use existing infrastructure and split it into development and production through source control.</p>
+<p>The two main modes of operation for production machine learning models are <strong>batch</strong> and <strong>near realtime</strong>. There are other modes of operation for machine learning models, but they are far less common.</p>
+<h3 id="batch-models">Batch Models</h3>
+<p>A batch process runs periodically and will make several inferences at a time. It might be a process that runs batch inference on tabular data and adds or updates a column with predictions made by the model. The process would be to periodically trigger a script or process that can fetch new data from and update the relevant datastore with a new prediction. The served model in this case would just be the model artefact loaded from a file and used to make predictions against new data sources. These batch models can be implemented using an orchestration tool like <a href="https://airflow.apache.org/">Apache Airflow</a> for scheduling and trigger the script and a tool like <a href="https://scikit-learn.org/stable/">scikit-learn</a> to do inference. For much larger datasets that don't fit into the memory of single machine, it would make sense to look at distrubted computing tools that have machine learning model capabilities like <a href="https://spark.apache.org/">Apache Spark</a> or <a href="https://dask.org">Dask</a>. </p>
+<h3 id="realtime-models">Realtime Models</h3>
+<p>Realtime models’ output are usually made available via APIs that can be called by downstream relevant applications in order to make new predictions on an ad hoc basis. This is the default mode for model serving tools like <a href="https://github.com/bentoml/BentoML">BentoML</a> and <a href="https://github.com/SeldonIO/seldon-core">Seldon</a>. <a href="https://www.mlflow.org/docs/latest/models.html">MLFlow</a>'s model feature provides for both batch and realtime model deployment. The model artifact (i.e. the model file) is loaded as a Python function which is then wrapped in a process that creates an API endpoint which can accept JSON as input data, run the model code to create a prediction and then return the prediction as JSON via that same API endpoint. This process is usually referred to as model serving.</p>
+<p>Model deployment and serving infrastructure have specific availability and reproducibility requirements. These are detailed in the section on continuous operations for production machine learning.</p>
+<h3 id="model-registry">Model Registry</h3>
+<p>A Model Registry is a mechanism that tracks and manages models, model artifacts and related to metadata for any deployed model type. MLFlow also provides a <a href="https://www.mlflow.org/docs/latest/model-registry.html">Model Registry</a> function that can provide fairly comprehensive capabilities.</p>
+<p><img alt="" src="../assets/15.png" /></p>
+<h2 id="monitoring-systems">Monitoring Systems</h2>
+<p><img alt="" src="../assets/Monitor.png" /></p>
+<p>The final stage in this machine learning workflow supports the monitoring of the model. This aim is to ensure that the model output is of a consistent performance level and reliably available to the downstream applications that need to consume it, as per the business requirement. The monitoring-related tasks should be automated and delivered with the aid of optimized tooling and infrastructure. Whatever infrastructure was used to deploy the model, it should provide the ability to check and monitor the real-time model to ensure it's up and working. In kubernetes, this is usually done using prometheus.</p>
+<p>Separate to the infrastructure monitoring requirements, there is also the need to track the metrics from any predictions made by the model. Tools like <a href="https://evidentlyai.com/">Evidently AI</a> allows the model operations team to record any number of relevant metrics each time the model is called. These metrics can be updated to include real-world data for supervised learning models and the periodic addition of aggregate metrics to track any required statistical performance metrics over time.</p>
+<p>As will be discussed later, it’s important to know how the model is performing against both the statistical and business requirements. When monitoring a model, many implementations will focus on the statistical metrics and how these vary over time. However, this is insufficient. Many projects fail because the business requirements they were designed to deliver aren’t being met . Take for example the churn example accompanying this report, the fact that the model is 95% accurate at predicting churn is not useful if this doesn’t translate to measurable reduction in actual churn rate. It’s achieving the latter –the business requirement – that actually delivers value to the business.</p>
+<p>As illustrated in the churn project, the model metrics are updated during the batch process, but if model metric tracking is not required, it’s possible to just update the table on each new batch run.</p>
+<p>All of the above requirements can often be implemented using and end-to-end provide like Amazon's <a href="https://aws.amazon.com/sagemaker/">SageMaker</a> or Cloudera's CDP(https://www.cloudera.com/products/cloudera-data-platform.html). It is possible to build an implementation using open source components provided the data security and governance requirements can be fulfilled too. While these two criteria don’t have a direct impact on model performance, they are important concerns for an IT department; it will also result in fewer integration issues down the line. An end-to-end ML solution that lacks robust data security and governance is unlikely to be accepted by an enterprise IT department.</p>
 
               
             </article>
@@ -691,7 +679,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../chapter-3/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 3: Machine Learning Infrastructure" rel="prev">
+        <a href="../chapter-3/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 3: Cross Functional Teams" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -700,20 +688,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              3: Machine Learning Infrastructure
+              3: Cross Functional Teams
             </div>
           </div>
         </a>
       
       
         
-        <a href="../conclusion/" class="md-footer__link md-footer__link--next" aria-label="Next: Conclusion" rel="next">
+        <a href="../chapter-5/" class="md-footer__link md-footer__link--next" aria-label="Next: 5: COPML in Practice" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Conclusion
+              5: COPML in Practice
             </div>
           </div>
           <div class="md-footer__button md-icon">
