@@ -12,7 +12,7 @@ Enterprise customers are realising that in order to see a return on their invest
 
 The scope of COPML isn’t limited to model artefacts or the tools and systems that support their ongoing maintenance and ensure that they are smoothly served to downstream applications. It also supports the fostering of collaboration between the various teams involved in the machine learning workflow. This document provides an exploration of the COPML methodology, using two example use cases to further illustrate what its application could look like in practice.
 
-** TODO - requirements / steps
+<!-- ** TODO - requirements / steps -->
 
 
 [^1]: Big Tech is used to collectively describe the most popular and best-performing American technology companies e.g. Facebook, Amazon, Microsoft, Apple, Netflix and Alphabet etc._

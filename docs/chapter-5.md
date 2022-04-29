@@ -66,7 +66,7 @@ One of the biggest operational costs of any machine learning project will be the
 
 This can be a continuous process or a periodic one but the actual implementation isn’t determined solely on the requirements of the downstream applications that are dependent on the model. The large data platform requirements will also have to be taken into account.
 
-For the churn example, customer data is always changing and many other systems use this customer data. Therefore data ingest will likely be automated anyway, outside of the need for training the machine learning models. However there might be an intermediate feature creation step that isn’t part of the standard pipeline which will also have to be automated. A CML job can be run once a week that creates a feature store that will be used to retrain the model.
+For the churn example, customer data is always changing and many other systems use this customer data. Therefore data ingest will likely be automated anyway, outside of the need for training the machine learning models. However there might be an intermediate feature creation step that isn’t part of the standard pipeline which will also have to be automated. An Airflow task can be run once a week that creates a feature store that will be used to retrain the model.
 
 For the pneumonia x-ray example there needs to be an automated data collection process that puts the images and the results from the predictions made by the model(s) and any manually obtained data into a data store that can be used for model retraining.
 
@@ -95,9 +95,13 @@ _**Action Items:**_
 
 In a constantly changing data environment, the performance of machine learning models can ‘drift’ and become less accurate (and by extension, less value-adding) over time. The Model Monitoring section of the workflow addresses requirements related to tracking and detecting changes in performance. It also supports some automated mitigations for drops in performance e.g. model retraining. This is one of the easiest parts of machine learning automation to implement, because the model training process has already been created during the original model build. Provided the data is accessible, whether in raw form, or in an intermediate form via a feature store, most machine learning platforms will support automated model retraining. An orchestration tool like Apache Airflow allows for model retraining automation with variable infrastructure requirements.
 
-<!-- For both example projects, the model retraining is done using the CML/CDSW Jobs function. This is done using 2 separate jobs. The first job will check the current metrics stored with the deployed model using the [model metrics](https://docs.cloudera.com/machine-learning/cloud/model-metrics/topics/ml-tracking-model-metrics-without-deploying-model.html) feature. If the value of the metric drops below a threshold, a second job is triggered that will perform the model retraining and redeployment. -->
+<!-- For both example projects, the model retraining is done using the CML/CDSW Jobs function. This is done using 2 separate jobs. The first job will check the current metrics stored with the deployed model using the [model metrics](https://docs.cloudera.com/machine-learning/cloud/model-metrics/topics/ml-tracking-model-metrics-without-deploying-model.html) feature. If the value of the metric drops below a threshold, a second job is triggered that will perform the model retraining and redeployment. 
 
 ** TODO - update 
+
+-->
+
+
 
 For the pneumonia x-ray example, a real world implementation using tens of thousands of images and a more complex pretrained model, model retraining could require 100s of GPU nodes for a few days to run. Using kubernetes in the public cloud can facilitate this rapid scale up and scale down capability.
 
@@ -143,9 +147,11 @@ The other requirement is to track the input data  upon which the model makes pre
 
 The final requirement relates to the data used to train the model and is covered in the section on reproducibility.
 
-<!-- Both of the example projects featured in this paper use the model metrics and model governance features of CML/CDSW and can therefore be considered as auditable. -->
+<!-- Both of the example projects featured in this paper use the model metrics and model governance features of CML/CDSW and can therefore be considered as auditable. 
 
 ** TODO update
+
+-->
 
 _**Action Items:**_
 
@@ -155,7 +161,7 @@ _**Action Items:**_
 
 There are two requirements that need to be satisfied in order for the output of a machine learning project or application to be considered reproducible. Firstly, any prediction made by the same version of the model, with the same input data, needs to give the same prediction. Secondly, when a new version of the model that has been trained on the same data set as previous versions of the model is given the same input data, the same parameters and the same random seed, it should make the same predictions. There might be some minor variability if a model is trained on a different architecture but this should be insignificant when comparing the statistical metrics and outputs during model testing. If a new model is trained using that same input data, parameters and methodologies as an original model and yields the same prediction results, the model can be said to be reproducible. With regards to the first condition, it’s worth noting that there will be some variability in the response of certain model types but these are rare and usually not found in enterprise implementations. Specifically, if there is a model that is used for decision making that affects a data subject (i.e. the life of an actual human) the same model should always make the same prediction when provided with the same input data.
 
-These requirements highlight the main factor for reproducibility: access to the original data used to train the model and the source code created to run the model training process. Often ML Pipeline tools like Kubeflow will store a complete copy of the data used in an image that is associated with each version of the model. However, the size of the datasets in an enterprise implementation presents some complications. In this case it would be better to use a tool that implements Open Lineage which can use metadata to track lineage of the data, not the actual data directly. The data can be stored in a snapshot and added to the lineage metadata. In an academic or proof of concept (PoC) context, the data sizes used for machine learning projects are often small enough that the data can be bundled together with the model artifacts. But for larger datasets (i.e. 10GB or more), something enterprise implementations often require, bundling the data with the model artifact is impractical. If the implementation also uses a feature store, this can complicate things further if the original source data is not also stored in the feature store and there is some machine learning based preprocessing e.g. PCA that is required to be part of the process to reproduce the model. Within the CDP platform, there are multiple data storage and database options available and each has its own backup and restoration policies. Depending on the location of the data storage (e.g. on premise HDFS or in the public cloud using S3 or ADLS), the data replication and ‘snapshot’ management process will be different.
+These requirements highlight the main factor for reproducibility: access to the original data used to train the model and the source code created to run the model training process. Often ML Pipeline tools like Kubeflow will store a complete copy of the data used in an image that is associated with each version of the model. However, the size of the datasets in an enterprise implementation presents some complications. In this case it would be better to use a tool that implements Open Lineage which can use metadata to track lineage of the data, not the actual data directly. The data can be stored in a snapshot and added to the lineage metadata. In an academic or proof of concept (PoC) context, the data sizes used for machine learning projects are often small enough that the data can be bundled together with the model artifacts. But for larger datasets (i.e. 10GB or more), something enterprise implementations often require, bundling the data with the model artifact is impractical. If the implementation also uses a feature store, this can complicate things further if the original source data is not also stored in the feature store and there is some machine learning based preprocessing e.g. PCA that is required to be part of the process to reproduce the model. There are multiple data storage and database options available and each has its own backup and restoration policies. Depending on the location of the data storage (e.g. on premise NFS or in the public cloud using S3 or ADLS), the data replication and ‘snapshot’ management process will be different.
 
 Given how data grows in size over time there are some decisions to be made at the start of the project regarding data reproducibility. These are covered in the action items later in this section.
 
